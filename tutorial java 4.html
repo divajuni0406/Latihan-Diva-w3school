@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id='demo'></p>
+    <p id='demo1'></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+    <p id="demo20"></p>
+    <p id="demo21"></p>
+    <p id="demo22"></p>
+    <p id="demo23"></p>
+    <button type="button" onclick="myfunction()">Push</button>
+    <p id="demo24"></p>
+    <button type="button" onclick="myFunction2()">Fruits</button>
+    <p id="demo25"></p>
+    <button type="button" onclick="myfunction1()">Fruits1</button>
+    <p id="demo26"></p>
+    <p id="demo27"></p>
+    <p id="demo28"></p>
+    <p id="demo29"></p>
+    <p id="demo30"></p>
+    <p id="demo31"></p>
+    <p id="demo32"></p>
+    <p id="demo33"></p>
+    <p id="demo34"></p>
+    <p id="demo35"></p>
+
+</body>
+
+<script>
+    // NUMBER METHODS********************************************************************************************
+    // if we use syntax tostring() the number of variabel will be string, you can see the syntax at the bottom below, 
+    let x = 20;
+    document.getElementById('demo').innerHTML = x.toString() + '<br>' + (12).toString() + '<br>' + (12 + 12).toString();
+
+    // he toExponential() method returns a string, with the number rounded and written using exponential notation
+    // An optional parameter defines the number of digits behind the decimal point.
+    // Still don't Understand about the result, how can be like that
+    let x1 = 9.656;
+    document.getElementById('demo1').innerHTML =
+        x1.toExponential() + "<br>" +
+        x1.toExponential(2) + "<br>" +
+        x1.toExponential(4) + "<br>" +
+        x1.toExponential(6);
+
+    // The toFixed() method rounds a number to a given number of digits.
+    // For working with money, toFixed(2) is perfect.
+    // Still don.t understand about the result and about what is the meaning of toFixed variabel
+    let x2 = 9.656;
+    document.getElementById('demo2').innerHTML =
+        x2.toFixed(0) + "<br>" +
+        x2.toFixed(2) + "<br>" +
+        x2.toFixed(4) + "<br>" +
+        x2.toFixed(6);
+
+    // The toPrecision() method returns a string, with a number written with a specified length:
+    // Still don.t understand about the result and about what is the meaning of toPrecision variabel
+    let x3 = 9.656;
+    document.getElementById('demo3').innerHTML =
+        x3.toPrecision() + "<br>" +
+        x3.toPrecision(2) + "<br>" +
+        x3.toPrecision(4) + "<br>" +
+        x3.toPrecision(6);
+
+    // Valueof() is used to make a number become number value 
+    let x4 = 221;
+    document.getElementById('demo4').innerHTML = x4.valueOf() + '<br>' + (21).valueOf() + '<br>' + (28 + 2).valueOf();
+
+    // Number() is used to convert variabel, & number to number, if can't be success it will be NaN Result
+    document.getElementById('demo5').innerHTML = Number(10) + '<br>' + Number(10.11) + '<br>' + Number(false) + '<br>' +
+        Number(true) + '<br>' + Number('haii');
+
+    // parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned: otherwise NaN Result
+    document.getElementById('demo6').innerHTML = parseInt('-10') + '<br>' + parseInt('10.30') + '<br>' + parseInt(
+        'haii 20');
+
+    // parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:
+    document.getElementById('demo7').innerHTML = parseFloat('-10') + '<br>' + parseFloat('10.30') + '<br>' + parseFloat(
+        'haii 20');
+
+    // MAX_VALUE returns the largest possible number in JavaScript.
+    let x5 = Number.MAX_VALUE;
+    document.getElementById('demo8').innerHTML = x5;
+    // MIN_VALUE returns the lowest possible number in JavaScript.
+    let x6 = Number.MIN_VALUE;
+    document.getElementById("demo9").innerHTML = x6;
+
+    let x7 = Number.POSITIVE_INFINITY;
+    document.getElementById("demo10").innerHTML = x7;
+    // POSITIVE_INFINITY is returned on overflow:
+    let x8 = 1 / 0;
+    document.getElementById("demo11").innerHTML = x8;
+
+    let x9 = Number.NEGATIVE_INFINITY;
+    document.getElementById("demo12").innerHTML = x9;
+    // NEGATIVE_INFINITY is returned on overflow:
+    let x10 = -1 / 0;
+    document.getElementById("demo13").innerHTML = x10;
+
+    // JS ARRAYS****************************************************************************************************
+    const cars = ['BMW', 'AVANZA', 'INOVA'];
+    document.getElementById('demo14').innerHTML = cars;
+
+    // Or you can write the const item like this, horizontal position 
+    const cars1 = [
+        'bmw',
+        'avanza',
+        'toyota',
+        'honda'
+    ];
+    document.getElementById('demo15').innerHTML = cars1;
+
+    // you can input the value inside the cons variabel like the bottom below
+    const cars2 = [];
+    cars2[0] = 'Ferari';
+    cars2[1] = 'Mazda';
+    cars2[2] = 'Fortuner';
+    document.getElementById('demo16').innerHTML = cars2.concat(cars1);
+
+    // can use syntax (new) to make a new array in array and then use () not []
+    const cars3 = new Array('bmw', 'toyota', 'avanza');
+    document.getElementById('demo17').innerHTML = cars3;
+
+    // aright this is the important things in array to call the object inside innerHTML.
+    // Number [0] it means the first object inside const, it's like [0,1,2,3, and so on] always start from 0
+    const cars4 = ['BMW', 'AVANZA', 'INOVA'];
+    document.getElementById('demo18').innerHTML = cars4[0] + ' ' + cars4[1] + ' ' + cars4[2];
+
+    // for const like this, if inside the const there is variabel again don't use [] but use {}
+    // and then to call the variabel inside innerHTML = constnames.variabel
+    const person = {
+        firstname: 'Diva',
+        lastname: 'Juni Artha',
+        age: '23 years old'
+    };
+    document.getElementById('demo19').innerHTML = person.firstname + ' ' + person.lastname + ' now is ' + person.age;
+
+    // if we use .length in array, it will be count perword, not as usual count per alphabet, so the total will be 4
+    const fruit = ['Apple', 'Mango', 'Coconut', 'Orange']
+    document.getElementById('demo20').innerHTML = fruit.length;
+
+    // we can use the syntax after innerHTML like that to call the content of fruit1, when you use
+    // fruit1[fruit1.length - 1], it will be call from backside of the content ;
+    const fruit1 = ['Apple', 'Mango', 'Coconut', 'Orange']
+    document.getElementById('demo20').innerHTML = fruit1[fruit1.length - 1];
+
+    // to make list item in java using for loop make an ul tag outside the box, let the item that we want to loop be inside for tag 
+    const animal = ['dog', 'cat', 'cow'];
+    let anleng = animal.length;
+    let text = '<ul>';
+    for (let i = 0; i < anleng; i++) {
+        let ani = animal[i];
+        text += `<li> ${ani} </li>`;
+    }
+    text += '</ul>';
+    document.getElementById('demo21').innerHTML = text;
+
+    // let header = '<h1>Haii perkenalkan</h1>';
+    // let p = '<p>Nama saya diva<p>';
+    // let text1 = `${header}`;
+    // for (let ii = 0; ii < 20; ii++) {
+    //     text1 += p + '<br>';
+    // }
+    // document.getElementById('demo22').innerHTML = text1;
+
+    // this is how to make list item from array in the other way using .forEach(myFunction)
+    const animal1 = ['dog', 'wolf', 'lion'];
+    let text2 = '<ul>';
+    animal1.forEach(myFunction);
+    text2 += '</ul>';
+
+    function myFunction(value) {
+        text2 += '<li>' + value + '</li>';
+    }
+    document.getElementById('demo23').innerHTML = text2;
+
+    // This is how to use const.push(), to push the variabel to show a new variabel when click the button
+    const body = ['leg', 'eye', 'hand'];
+    document.getElementById('demo24').innerHTML = body;
+
+    function myfunction() {
+        body.push('neck');
+        document.getElementById('demo24').innerHTML = body;
+    }
+    // This is how to use const.push(), to push the variabel to show a new variabel when click the button
+    const fruits = ["Banana", "Orange", "Apple"];
+    document.getElementById("demo25").innerHTML = fruits;
+
+    function myFunction2() {
+        fruits.push("Lemon");
+        document.getElementById("demo25").innerHTML = fruits;
+    }
+    // This is how to add new value inside array with [const.length], when we use length variable it will be count
+    // start from 1, but in array will be count start from 0, so when we use length the total will be 3
+    // but the total in array is 2, so 3 is still empty, u can put any value that you want to add, it's same as using .push
+    const fruits1 = ['avocado', 'watermelon', 'mango'];
+    document.getElementById('demo26').innerHTML = fruits1;
+
+    function myfunction1() {
+        fruits1[fruits1.length] = 'Lemon';
+        document.getElementById('demo26').innerHTML = fruits1;
+    }
+
+    // When we put the higher number of array [6] the other before [6] will be undefined result 
+    const hotel = ['Westin', 'Nusa Dua', 'Melia Bali'];
+    hotel[6] = 'Sofitel';
+    let holen = hotel.length;
+    let text1 = ''
+    for (let i = 0; i < holen; i++) {
+        text1 += hotel[i] + '<br>';
+    }
+    document.getElementById('demo27').innerHTML = text1;
+
+    // To know is the value array or not, u can use type of to know about it, if it's array the result will be object 
+    const hotell = ['Westin', 'Kemphinski', 'Intercontinental'];
+    document.getElementById('demo28').innerHTML = typeof hotell;
+    // or can use array.isarray() to know it
+    document.getElementById('demo29').innerHTML = Array.isArray(hotell);
+    // or can use const instanceof Array 
+    document.getElementById('demo30').innerHTML = hotell instanceof Array;
+</script>
+
+</html>

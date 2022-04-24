@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <p id="demo"></p>
+  <p id="demo1"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+  <p id="demo4"></p>
+  <button type="button" onclick="myfunction2()">Klik</button>
+  <p id="demo5"></p>
+  <p id="demo6"></p>
+  <p id="demo7">Lihat Hasilnya setelah tombol ini kamu klik</p>
+  <button type="button" onclick="myfunction4()">
+    KLIK DISINI
+  </button>
+  <p id="demo8"></p>
+  <button type="button" onkeydown="myfunction5()">
+    klik
+  </button>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+  <p id="demo11"></p>
+  <button type="button" onclick="myfunction6()">Ig</button>
+  <img src="image/logo-facebookpng-32204.png" alt="FB" style="width: 100px; height: 100px;" id="demo12">
+  <button type="button" onclick="myfunction7()">fb</button>
+  <p id="demo13"></p>
+  <p id="demo14"></p>
+  <button type="button" onclick="myFunction8()"> klik me ! </button>
+  <p id='demo15'>Hello World!</p>
+  <button type="button" onclick="myFunction9()">Klik Me !</button>
+  <p id="demo16">Lihat Microsoft Yuk</p>
+  <button type="button" onclick="myFunction10()">Klik Me !</button>
+  <p id="demo17">Lihat Microsoft Yuk</p>
+  <button type="button" onclick="myFunction11()">Klik Me !</button>
+  <p id="demo18">Lihat Microsoft dan Microsoft Yuk</p>
+  <p id="demo19"></p>
+  <P id="demo20"></P>
+  <p id="demo21"></p>
+  <p id="demo22"></p>
+  <p id="demo23"></p>
+  <p id="demo24"></p>
+  <p id="demo25"></p>
+  <p id="demo26"></p>
+  <p id="demo27"></p>
+  <p id="demo28"></p>
+  <p id="demo29"></p>
+  <p id="demo30"></p>
+  <p id="demo31"></p>
+
+
+</body>
+<script>
+  // 1
+  function myfunction(p1, p2) {
+    return p1 * p2; // The return value is "returned" back to the "caller":
+  }
+  document.getElementById("demo").innerHTML = myfunction(4, 3);
+  // 2
+  function myfunction1(a, b) {
+    return a * b;
+  }
+  let a = myfunction1(4, 5); //The return value is "returned" back to the "caller":
+  document.getElementById("demo1").innerHTML = a;
+  // 3
+  function toCelcius1(f) { //How to using toCelcius variable
+    return (5 / 5) + (f - 44);
+  }
+  document.getElementById("demo2").innerHTML = toCelcius1(44);
+
+  function toCelcius2(f) { //How to using toCelcius variable part 2
+    return (5 / 5) + (f - 44);
+  }
+  // 4
+  document.getElementById("demo3").innerHTML = toCelcius2; //the result without ()
+  // 5
+  document.getElementById("demo4").innerHTML = //How to using toCelcius in differentway
+    "umur saya adalah " + toCelcius(44) + " tahun";
+
+  function toCelcius(f) {
+    return (5 / 5) * (f - 44);
+  }
+
+  function myfunction2() { //How to using type of in my function
+    let animal = "Oni" //If typeof function is outside of myfunction it will be underfined result
+    document.getElementById("demo5").innerHTML =
+      typeof animal + " namanya " + animal;
+  }
+
+  const anjing = {
+    fur: "brown",
+    height: "30cm",
+    name: "Oni"
+  }; //How to call the const of anjing with string
+  document.getElementById("demo6").innerHTML =
+    "nama anjingnya " + anjing.name + " tingginya " + anjing.height + " memiliki bulu berwarna " + anjing.fur;
+
+  const anjing2 = { //How to call fullname of the const of anjing2 with myfunction
+    fur: "brown",
+    height: "30cm",
+    firstname: "oni",
+    lastname: "opet",
+    fullname: function myfunction3() {
+      return this.firstname + " " + this.lastname;
+    }
+  };
+
+  function myfunction4() {
+    document.getElementById("demo7").innerHTML = anjing2.fullname();
+  }
+
+  function myfunction5() { //How to display date
+    document.getElementById("demo8").innerHTML = Date()
+  }
+  let A = "jsjsjsjsjsjsjjs"; //How to know the total of words
+  document.getElementById("demo9").innerHTML = A.length;
+
+  let B = "nama saya 'diva'" // How to make single quote or double
+  document.getElementById("demo10").innerHTML = B;
+
+  let text = 'My Name\'s Diva \\ My Name Is Diva' //cara membuat single quote & slash
+  document.getElementById('demo11').innerHTML = text;
+
+  function myfunction6() {
+    document.getElementById('demo12').src = "image/instagram-ge8981922d_1920.jpg";
+  }
+
+  function myfunction7() {
+    document.getElementById('demo12').src = "image/logo-facebookpng-32204.png";
+  }
+
+  let str = "Banana, Apple, Strawberries " //cara menggunakan str.slice dari huruf depan (dari mana, sampai mana)
+  // dari huruf belakang (sampai mana, dari mana)
+  document.getElementById('demo13').innerHTML = str.slice(14, 27) + "<br>" + str.slice(-13, -1);
+
+  let str1 = "Banana, Apple, Strawberries" //cara menggunakan str.slice (mulai dari mana dan otomatis sampai belakang)
+  document.getElementById('demo14').innerHTML = str.slice(7);
+
+  function myFunction8() { //CARA MEMBUAT HURUF UPPERCASE & LOWERCASE OTOMATIS
+    let text1 = document.getElementById('demo15').innerHTML;
+    document.getElementById('demo15').innerHTML =
+      text1.toUpperCase() + '<br>' + text1.toLowerCase();
+  }
+
+  function myFunction9() { //cara penggunaan replace di js
+    let text2 = document.getElementById('demo16').innerHTML;
+    document.getElementById('demo16').innerHTML =
+      text2.replace("Microsoft", "Museum");
+  }
+
+  function myFunction10() { //cara penggunaan replace kemudian menggunakan /text/i berarti insensitif di js
+    let text2 = document.getElementById('demo17').innerHTML;
+    document.getElementById('demo17').innerHTML =
+      text2.replace(/microsoft/i, "Museum");
+  }
+
+  function myFunction11() { //cara penggunaan replace kemudian menggunakan /text/g berarti semua kata berhubungan dengan microsoft diganti di js
+    let text2 = document.getElementById('demo18').innerHTML;
+    document.getElementById('demo18').innerHTML =
+      text2.replace(/Microsoft/g, "Museum");
+  }
+  // JS STRING METHODE *************************************************************************************
+  let text3 = "    Hello World !"; // cara penggunaan trim = trim berfungsi menghapus whitespace pada kalimat.
+  let text4 = text3.trim();
+  document.getElementById('demo19').innerHTML = 'length text3 = ' + text3.length + '<br>' + 'length text4 = ' + text4
+    .length;
+
+  // This is how to use padStart syntax, it's function to add string according to the word inside padStart(),
+  // and the number inside () is the total of the string
+  let text5 = "5";
+  document.getElementById('demo20').innerHTML = text5.padStart(5, "x");
+
+  // How to use padStart with number not string, we should change the number to the string first,
+  // make a variabel and put inside variabel = variabel.toString(), and after inner html just look at the below syntax
+  let numb = 7;
+  let text6 = numb.toString();
+  document.getElementById('demo21').innerHTML = text6.padStart(5, 8);
+
+  // Either padStart or padEnd only can be used for string not number so that's why we should change, 
+  // the number to string with code (toString())
+  let text7 = '8';
+  document.getElementById('demo21').innerHTML = text7.padEnd(7, 'p');
+  let numb2 = 9
+  let text8 = numb2.toString()
+  document.getElementById('demo22').innerHTML = text8.padEnd(7, 0);
+
+  // charAt is to be used for take the alphabet of the words (0 is mean the first alphabet from the text)
+  let text9 = 'Diva Juni Artha'
+  document.getElementById('demo23').innerHTML = text9.charAt(0);
+
+  // PLEASE ASK WHERE IS THE NUMBER OF 68 FROM ???
+  let text10 = 'Diva Juni Artha';
+  document.getElementById('demo24').innerHTML = text10.charCodeAt(0);
+  // The simple way to take the alphabet rom the word is just use {}
+  let text11 = 'Dewi'
+  document.getElementById('demo25').innerHTML = text11[0];
+
+  // .split is use to seperate beetwen alphabet with the others like (,)
+  // if we delete the syntax of split the result will be (,) when you put (myarray[1])
+  let text12 = 'a,b,c,d,e,f';
+  const myarray = text12.split(',');
+  document.getElementById('demo26').innerHTML = myarray[1];
+
+  // learn not from w3School*********************************************************************************
+  let text13 = "Hello";
+  let arr2 = 'Saya-Dengan-Senang-Hati-Bermain-Dengan-Anda';
+  // use split, and split('') inside the bar have to match with inside variabel arr2,
+  // what kind of word to seperate it, and we have to input it into split('-'),
+  // to seperate each other of the word, it will be ['Saya(this is the value of index will be 0 and so on)'-'Dengan'-'Senang'-'Hati'-'Bermain'-'Dengan'-'Anda'] 
+  const myArr = arr2.split("-");
+  let hasil = '';
+  // (for) syntax is looping syntax, it will be always doing repetition from hasil and back to let again and so on...
+  // hasil1 = 0 it means the value from hasil1 start from 0, and <(it means kurang dari). 
+  // myarr.length it means the number every words inside arr2 (0,1,2,3,4,5,6,7),
+  // kurang dari 7 and if true 0 < 7 the result will be appear and back again,
+  // 0 will be + 1= 1, (1) is from the variabel hasil1++, now is 1, 1 < 7= true and appear and so on
+  // how to read the syntax == for (let hasil1 = 0;(jika) hasil1 (kurang dari)< myArr.length (muncul); hasil1++)
+  for (let hasil1 = 0; hasil1 < myArr.length; hasil1++) {
+    // hasil it means (empty) for putting any result and += same like (hasil + myArr[hasil1]),
+    // and the myArr[hasil1] it means myArr[0], and looping continuesly, so 0 is (indexOf in the form of number)
+    // inside array it means the first word, the result is saya and so on
+    hasil += myArr[hasil1] + "<br>"
+  }
+  document.getElementById("demo27").innerHTML = hasil;
+
+  let text14 = '{"employees":[' +
+    '{"firstName":"John","lastName":"Doe" },' +
+    '{"firstName":"Anna","lastName":"Smith" },' +
+    '{"firstName":"Peter","lastName":"Jones" }]}';
+
+  const obj = JSON.parse(text14);
+  console.log(obj)
+  document.getElementById("demo28").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName + '<br>' +
+    obj.employees[2].firstName + ' ' + obj.employees[2].lastName;
+</script>
+
+</html>

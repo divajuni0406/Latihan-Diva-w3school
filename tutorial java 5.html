@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+    <p id="demo20"></p>
+    <p id="demo21"></p>
+    <p id="demo22"></p>
+    <p id="demo23"></p>
+    <p id="demo24"></p>
+    <p id="demo25"></p>
+    <button type='button' onclick="myNum()">Sort Alphabetically</button>
+    <p id="demo26"></p>
+    <button type="button" onclick="myNum1()">Sort Numerically</button>
+    <p id="demo27"></p>
+    <button type="button" onclick="numrandom()">Click Number Random</button>
+    <p id="demo28"></p>
+    <button type="button" onclick="myFunction0()">Click Here</button>
+    <p id="demo29"></p>
+    <p id="demo30"></p>
+    <p id="demo31"></p>
+    <p id="demo32"></p>
+    <p id="demo33"></p>
+    <p id="demo34"></p>
+    <p id="demo35"></p>
+    <p id="demo36"></p>
+    <button type="button" onclick="sort()">Click Here To Sort By Type</button>
+    <p id="demo37"></p>
+    <p id="demo38"></p>
+    <p id="demo39"></p>
+    <p id="demo40"></p>
+    <p id="demo41"></p>
+</body>
+<script>
+    // Js Arrays Methode*********************************************************************************************
+    // When we use toString in array it will be change to string and will be seperated with coma like inside array;    
+    const animal = ['Pig', 'Cow', 'Monkey'];
+    document.getElementById('demo').innerHTML = animal.toString();
+    // (const.join) is use to put what kind of element you want to put, to seperate the element 
+    document.getElementById('demo1').innerHTML = animal.join('*');
+    // (const.pop()) is used to remove the last element of value of array,
+    // if we only use animal.pop not with const, the result will be only the last element
+    document.getElementById('demo2').innerHTML = animal;
+    animal.pop();
+    document.getElementById('demo3').innerHTML = animal;
+    // when we use const; const.push('...') this is to add a new array 
+    document.getElementById('demo4').innerHTML = animal;
+    animal.push('dragon');
+    document.getElementById('demo5').innerHTML = animal;
+    // (const.shift()) is used to delete the first array, when we only use const.shift() only the result will be only the first array
+    document.getElementById('demo6').innerHTML = animal;
+    animal.shift();
+    document.getElementById('demo7').innerHTML = animal;
+    // (const.unshift()) is used to add the first array, when we only use const.unshift() the result will be only the number
+    document.getElementById('demo8').innerHTML = animal;
+    animal.unshift('Ant');
+    document.getElementById('demo9').innerHTML = animal;
+    // So to delete an array we can use (delete const[number of array]) to delete it instead of pop and unshift 
+    document.getElementById('demo10').innerHTML = 'the first array of animal is ' + animal[0];
+    delete animal[0];
+    document.getElementById('demo11').innerHTML = 'the first array of animal is ' + animal[0];
+
+    // How to using concat syntax (const.concat(const);) this function to merge or combine the const with th other const
+    const people = ['Dewi', 'Diva', 'Dede'];
+    const dog = ['Oni', 'Nimo', 'Gambrong'];
+    const dog2 = ['zilong', 'Niko'];
+    const peopledog = people.concat(dog);
+    document.getElementById('demo12').innerHTML = peopledog;
+    // So if you want to add one more const inside concat just use (,) to seperate it 
+    const peopledog2 = people.concat(dog, dog2);
+    document.getElementById('demo13').innerHTML = peopledog2;
+    // can add the other value inside concat like that 
+    const poepledog22 = dog.concat(dog2[0]);
+    document.getElementById('demo14').innerHTML = poepledog22;
+
+    // The first parameter (2) defines the position where new elements should be added (spliced in).
+    // The second parameter (0) defines how many elements should be removed.
+    // The rest of the parameters ("kera" , "tude") define the new elements to be added.
+    // The splice() method returns an array with the deleted items:
+    const people1 = ['Dewi', 'Diva', 'Dede'];
+    document.getElementById('demo15').innerHTML = people1;
+    people1.splice(2, 0, 'kera', 'tude');
+    document.getElementById('demo16').innerHTML = people1;
+
+    // Original array 
+    const a = ['pig', 'dog', 'bird'];
+    document.getElementById('demo17').innerHTML = 'Original array is : ' + '<br>' + a;
+    // New array 
+    let removed = a.splice(2, 1, 'goat', 'lion');
+    document.getElementById('demo18').innerHTML = 'Delete array and add array with splice :' + '<br>' + a;
+    // Remove array 
+    document.getElementById('demo19').innerHTML = 'This is the element that be removed by splice :' + '<br>' + removed;
+    let removed2 = a.splice(0, 1);
+    // you can use splice to remove element at the front, (0 is add but we don't pu anything after this,
+    // and delete (1)) so (...(0), pig(1))
+    document.getElementById('demo20').innerHTML = a;
+
+    // We also can use slice to delete an araay 
+    const b = ['pig', 'dog', 'bird'];
+    const bslice = b.slice(1);
+    document.getElementById('demo21').innerHTML = b + '<br>' + bslice;
+
+    // We also can delete the item using slice 2 elements directly 
+    const c = ['pig', 'dog', 'bird', 'monkey', 'horse'];
+    const cslice = c.slice(1, 3);
+    document.getElementById('demo22').innerHTML = c + '<br>' + cslice;
+
+    // JS ARRAY SORT*******************************************************************************************
+    // (const.sort) is used to sort the value by alphabet
+    const d = ['monkey', 'snake', 'pig', 'dog', 'horse']
+    d.sort();
+    document.getElementById('demo23').innerHTML = d;
+    // (const.reverse) is used to reverse the element 
+    d.reverse()
+    document.getElementById('demo24').innerHTML = d;
+
+    // to make the number sorting correctly use (const.sort(function(a, b){return a-b})),
+    // if you use (const.sort()) only the result will be 40 bigger than 100, because the first number 4 is bigger than 1
+    const num = [40, 20, 100, 90, 80];
+    num.sort(function (a, b) {
+        return a - b
+    });
+    document.getElementById('demo25').innerHTML = num;
+
+    // This is the different between sort by number, and alphabet 
+    function myNum() {
+        const e = [30, 80, 10, 5, 100];
+        e.sort();
+        document.getElementById('demo26').innerHTML = e;
+    }
+
+    function myNum1() {
+        const e1 = [30, 80, 10, 5, 100];
+        e1.sort(function (a, b) {
+            return (a - b)
+        });
+        document.getElementById('demo27').innerHTML = e1;
+    }
+
+    // This is how to make a random number when we click the button, use this syntax (return (0.5 - Math.random()))
+    function numrandom() {
+        const e2 = [30, 90, 20, 10, 15];
+        e2.sort(function (a, b) {
+            return (0.5 - Math.random())
+        });
+        document.getElementById('demo28').innerHTML = e2;
+    }
+
+    const points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo29").innerHTML = points;
+
+    // Still Don't Understand About The Flow Of Syntax 
+    function myFunction0() {
+        for (let i = points.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i)
+            let k = points[i]
+            points[i] = points[j]
+            points[j] = k
+        }
+        document.getElementById("demo29").innerHTML = points;
+    }
+    // To looking for the lowest number you can make a sort of number and the call (points[0])
+    points.sort(function (a, b) {
+        return (a - b)
+    });
+    // Before to looking the lowest number we make the number sortly with (a-b),
+    // now we can make reverse it's (b-a) and when we call [points[0]] the first number will be the highest number 
+    document.getElementById('demo30').innerHTML = 'The lowest number is ' + points[0];
+    points.sort(function (a, b) {
+        return (b - a)
+    });
+    document.getElementById('demo31').innerHTML = 'The highest number is ' + points[0];
+
+    // still dont understand about the flow 
+    // the other way to looking the highest number
+    const points1 = [20, 30, 10, 5, 100];
+
+    function myarraymax(arr) {
+        return Math.max.apply(null, arr);
+    }
+    document.getElementById('demo32').innerHTML = myarraymax(points1);
+    // still dont understand about the flow 
+    // the other way to looking the lowest number
+    function myarraymax1(arr) {
+        return Math.min.apply(null, arr);
+    }
+    document.getElementById('demo33').innerHTML = myarraymax1(points1);
+
+    // still dont understand about the flow 
+    // the other way to looking the highest number USING WHILE
+    document.getElementById('demo34').innerHTML = myArrayMax(points1);
+
+    function myArrayMax(arr) {
+        let len = arr.length;
+        let max = -Infinity;
+        while (len--) {
+            if (arr[len] > max) {
+                max = arr[len];
+            }
+        }
+        return max;
+    }
+
+    // still dont understand about the flow 
+    // the other way to looking the LOWEST number USING WHILE
+    document.getElementById('demo35').innerHTML = myArrayMin(points1);
+
+    function myArrayMin(arr) {
+        let len = arr.length;
+        let min = Infinity;
+        while (len--) {
+            if (arr[len] < min) {
+                min = arr[len];
+            }
+        }
+        return min;
+    }
+
+    // how to sort cars by it's year using ({return a.year - b.year})
+    const cars = [{
+            type: 'Avanza',
+            year: 2016
+        },
+        {
+            type: 'Zedan',
+            year: 2010
+        },
+        {
+            type: 'Inova',
+            year: 2020
+        }
+    ];
+    cars.sort(function (a, b) {
+        return a.year - b.year
+    });
+    document.getElementById('demo36').innerHTML = cars[0].type + ' ' + cars[0].year + '<br>' +
+        cars[1].type + ' ' + cars[1].year + '<br>' +
+        cars[2].type + ' ' + cars[2].year;
+
+    // This is how to sort car by type with button, but still don't understand about return (-1,1,0) inside function sort()
+    const cars1 = [{
+            type: 'Avanza',
+            year: '1998'
+        },
+        {
+            type: 'Pajero',
+            year: '1970'
+        },
+        {
+            type: 'Fortuner',
+            year: '1975'
+        }
+    ];
+    displaycar();
+
+    function sort() {
+        cars1.sort(function (a, b) {
+            let p = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if (p < y) {
+                return -1;
+            }
+            if (p > y) {
+                return 1;
+            }
+            return 0;
+        });
+        displaycar();
+    }
+
+    function displaycar() {
+        document.getElementById('demo37').innerHTML =
+            cars1[0].type + ' ' + cars1[0].year + '<br>' +
+            cars1[1].type + ' ' + cars1[1].year + '<br>' +
+            cars1[2].type + ' ' + cars1[2].year + '<br>';
+    }
+</script>
+
+</html>

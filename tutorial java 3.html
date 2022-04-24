@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <P id="demo1"></P>
+    <P id="demo2"></P>
+    <P id="demo3"></P>
+    <P id="demo4"></P>
+    <P id="demo5"></P>
+    <P id="demo6"></P>
+    <P id="demo7"></P>
+    <P id="demo8"></P>
+    <P id="demo9"></P>
+    <P id="demo10"></P>
+    <P id="demo11"></P>
+    <P id="demo12"></P>
+    <P id="demo13"></P>
+    <P id="demo14"></P>
+    <P id="demo15"></P>
+    <P id="demo16"></P>
+    <P id="demo17"></P>
+    <P id="demo18"></P>
+    <P id="demo19"></P>
+    <P id="demo20"></P>
+    <P id="demo21"></P>
+    <P id="demo22"></P>
+    <P id="demo23"></P>
+    <P id="demo24"></P>
+    <P id="demo25"></P>
+    <P id="demo26"></P>
+    <P id="demo27"></P>
+    <P id="demo28"></P>
+    <P id="demo29"></P>
+    <P id="demo30"></P>
+    <br>
+    <p>Mencari Lokasi Nama Pada indexOf</p>
+    <input type="text" name="" id="jawaban">
+    <button type="submit" onclick="go()">Lihat Hasil !</button>
+    <p id="demojawaban"></p>
+</body>
+
+<script>
+    // JS STRING SEARCH**********************************************************************************
+    // Still don't understand what is the meaning of indexOf(), 
+    // *Both indexOf(), and lastIndexOf() return -1 if the text is not found
+    let str = 'Please locate where "locate" occurs!';
+    document.getElementById('demo').innerHTML = str.indexOf('locate');
+    // Still don't understand what is the meaning of lastindexOf()
+    let str1 = "Please locate where 'locate' occurs!";
+    document.getElementById('demo1').innerHTML = str1.lastIndexOf('locate');
+    // Still don't understand what is the meaning of 15 is
+    let str2 = "Please locate where 'locate' occurs!";
+    document.getElementById('demo2').innerHTML = str2.indexOf("locate", 15);
+    // Still don't understand what is the meaning of search and the value is
+    let str3 = "Please locate where 'locate' occurs!";
+    document.getElementById('demo3').innerHTML = str3.search('locate');
+
+    // Match syntax is used to search how many total of word of that or etc inside the variabel that be searched
+    // If a regular expression does not include the g modifier (to perform a global search), the match(),
+    // method will return only the first match in the string
+    let text = 'My Name Is Diva, I\'m\ from tanjung benoa';
+    document.getElementById('demo4').innerHTML = text.match(/i/g) + '<br>' + text.match(/I/g);
+    // Sometimes there are uppercase alphabet and lowercase, to search of those we can add after g(global)
+    // with i(insensitive) to search all words even uppercase or lowercase words
+    let text1 = 'My Name Is Diva, I\'m\ from tanjung benoa';
+    document.getElementById('demo5').innerHTML = text1.match(/i/gi);
+
+    // (includes()) element is used to search that the text include with that text or not, if include the result will be (true)
+    let text2 = 'My Name Is Diva, I\'m\ 23 Years Old';
+    document.getElementById('demo6').innerHTML = text2.includes('Name');
+    // Check if a string includes "world", starting the search at position 12:
+    document.getElementById('demo7').innerHTML = text2.includes('Name', 12);
+
+    // Learn not from w3school
+    // Usually the words will be count by per alphabet, so array is different, array will be count per block
+    // such as (kera) is number (0), diva is number (1), and so on. the diferent beetwen array and indexof,
+    // (array[]) to show the words directly if we put the number inside array. if indexOf to show where the location of the words that we search
+    function go() {
+        let array = ["Kera", "Diva", "Tude", "Loucian"];
+        let label = document.getElementById('jawaban').value;
+        let search = array.indexOf(label);
+        if (search > -1) {
+            document.getElementById('demojawaban').innerHTML = array[search] + ' Berada Di Index Nomer ' + search;
+        }
+
+    }
+    // The startsWith() method returns true if a string begins with a specified value, otherwise false:
+    let text3 = 'hai my name is diva';
+    document.getElementById('demo8').innerHTML = text3.startsWith('hai');
+    // Also can use ('string', number to start the words)
+    document.getElementById('demo9').innerHTML = text3.startsWith('my', 4);
+    // The endsWith() method returns true if a string ends with a specified value, otherwise false:
+    document.getElementById('demo10').innerHTML = text3.endsWith('diva');
+
+    // JS STRING TEMPLATES**************************************************************************************
+    // Template Literals use back-ticks (``) rather than the quotes ("") to define a string:
+    let text4 = `Hello World !`;
+    document.getElementById('demo11').innerHTML = text4;
+
+    // With template literals, you can use both single and double quotes inside a string:
+    let text5 = `Hello My Name Is "Diva"`;
+    document.getElementById('demo12').innerHTML = text5;
+
+    // Template literals allow variables in strings
+    // The different between (''), (""), with (``) is (``) you can use it to call string with
+    // variable at the same time in one string, but to call the variabel must use ${},
+    // the example at the bottom below
+    let firstName = 'Diva Juni';
+    let lastName = 'Artha';
+    let text6 = `Welcome ${firstName} ${lastName}!`;
+    document.getElementById('demo13').innerHTML = text6;
+
+    // Don't understand what the meaning of (toFixed) is
+    let price = 10;
+    let VAT = 0.25;
+    let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+    document.getElementById('demo13').innerHTML = total;
+
+    // Don't understand about the flow of the syntax
+    let header = "Templates Literals";
+    let tags = ["template literals", "javascript", "es6"];
+    let html = `<h2>${header}</h2><ul>`;
+    for (const x of tags) {
+        html += `<li>${x}</li>`;
+    }
+    html += `</ul>`;
+    document.getElementById("demo14").innerHTML = html;
+
+    // JS NUMBER ********************************************************************************************
+    // Integers (numbers without a period or exponent notation) are accurate up to 15 digits:
+    let x = 999999999999999;
+    let y = 9999999999999999;
+    document.getElementById("demo15").innerHTML = x + "<br>" + y;
+
+    // Floating point arithmetic is not always 100% accurate.
+    let a = 0.2 + 0.1;
+    document.getElementById("demo16").innerHTML = "0.2 + 0.1 = " + a;
+    // But you can use your idea to get the value (0.3), you can make the syntax like the bottom below
+    let b = (0.2 * 10 + 0.1 * 10) / 10;
+    document.getElementById('demo17').innerHTML = '0.2 + 0.1 = ' + b;
+
+    // c and d are string, not numeric, so if we use (+) it will not work, because +
+    // can be used to combine some words, variable, etc. But if we use (-,/,*) these are work
+    let c = '20';
+    let d = '22';
+    let e = c - d;
+    document.getElementById('demo18').innerHTML = e;
+
+    // the result will be NaN (Not a Number) if we add between number and string 
+    document.getElementById('demo19').innerHTML = 10 / 'apple';
+
+    // We can use (isNaN()) to find out the string / not a number and the result will be true, otherwise false 
+    let f = 100 / 'Apple';
+    document.getElementById('demo20').innerHTML = isNaN(f);
+
+    // This is while variabel, while is the same as (for) variabel, but there is a little different, and infinity variabel is for stop the variabel until the result reach the max number 
+    // let myNumber = 2;
+    // let txt = "";
+    // // After while() variabel {You can fil the syntax inside here for the loop}
+    // while (myNumber != Infinity) {
+    //     myNumber = myNumber * myNumber;
+    //     txt += myNumber + "<br>";
+    // }
+    // document.getElementById("demo21").innerHTML = txt;
+
+    let num = 0;
+    // txt1 is the variabel to accomodate variabel txt0 at the last 
+    let txt1 = "";
+    // let text0 = 'haii saya diva';
+    while (num < 8) {
+        let text0 = 'haii saya diva';
+        // This is very important to fill, because while variable is looping variable, when the variabel num(0)
+        // pass the num++, the num variabel will be (1), and so on untill < 5 and it will be stop
+        num++;
+        txt1 += text0 + "<br>";
+    }
+    document.getElementById('demo22').innerHTML = txt1;
+
+    // let Page = confirm('Apakah mau mengulang ?');
+    // let ulang = 0;
+    // while (Page) {
+    //     page1 = confirm('Apakah mau mengulang ?')
+    //     ulang++;
+    //     if (page1 == true) {
+    //         Page = false;
+    //     }
+    // }
+    // documen.write('Perulangan sudah dilakukan sebanyak ' + ulang + ' Kali');
+
+    // type of infinity is number, infinity is an number 
+    document.getElementById('demo23').innerHTML = typeof Infinity;
+
+    // i still don't know where the number of 255 from is, the result is 255
+    let l = 0xfF;
+    document.getElementById('demo24').innerHTML = "0xFF = " + l;
+
+    // By default, JavaScript displays numbers as base 10 decimals.
+    // But you can use the toString() method to output numbers from base 2 to base 36.
+    // Hexadecimal is base 16. Decimal is base 10. Octal is base 8. Binary is base 2.
+    let myNumber = 32;
+    document.getElementById('demo25').innerHTML =
+        "Decimal 32 = " + "<br><br>" +
+
+        "Hexatrigesimal (base 36): " + myNumber.toString(36) + "<br>" +
+        "Duotrigesimal (base 32): " + myNumber.toString(32) + "<br>" +
+        "Hexadecimal (base 16): " + myNumber.toString(16) + "<br>" +
+        "Duodesimal (base 12): " + myNumber.toString(12) + "<br>" +
+        "Desimal (base 10): " + myNumber.toString(10) + "<br>" +
+        "Octal (base 8): " + myNumber.toString(8) + "<br>" +
+        "Binary (base 2): " + myNumber.toString(2);
+
+    // Comparing two JavaScript objects always returns false.
+    // (variabel==variabel = it means equal) & (variabel===variabel) = it means not equal,
+    // are variable r and r1 same ?, you can make the statement (r==r1;)
+    // when using syntax (new Number) the number become an object not a number 
+    let r = new Number(220);
+    let r1 = new Number(220);
+    document.getElementById('demo26').innerHTML = (r == r1);
+
+    let r2 = new Number(220);
+    let r3 = new Number(220);
+    document.getElementById('demo26').innerHTML = (r2 === r3);
+</script>
+
+</html>

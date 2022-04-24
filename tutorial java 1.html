@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>JavaScript</h1>
+  <button type="button" onclick="myfunction3()">
+    FB
+  </button>
+  <img id="myfoto" src="image/logo-facebookpng-32204.png" alt="fb" height="100px" width="100px">
+  <button type="button" onclick="myfunction4()">
+    ig
+  </button>
+
+  <p id="demo"></p>
+
+  <p id="demo1">
+    Aku sayang
+  </p>
+  <button type="button" onclick="myfunction()">
+    TRY IT
+  </button>
+
+  <p id="demo2">
+    Haii aku
+  </p>
+  <button type="button" onclick="myfunction2()">
+    KLIK!
+  </button>
+
+  <p id="demo3"></p>
+  <br>
+
+  <button type="button" onclick="myFunction5()">
+    Try
+  </button><br>
+
+  <button type="button" onclick="myFunction6()">
+    Print This Page
+  </button>
+
+  <p id="demo4"></p>
+  <p id="demo5"></p>
+  <p id="demo6"></p>
+  <button type="button" onclick="myfunction7()">
+    click me!
+  </button>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+  <p id="demo11"></p>
+  <p id="demo12"></p>
+  <p id="demo13"></p>
+  <p id="demo14"></p>
+  <p id="demo15"></p>
+  <p id="demo16"></p>
+  <p id="demo17"></p>
+  <p id="demo18"></p>
+  <p id="demo19"></p>
+  <p id="demo20"></p>
+  <p id="demo21"></p>
+  <p id="demo22"></p>
+  <p id="demo23"></p>
+  <P id="demo24"></P>
+  <P id="demo25"></P>
+  <P id="demo26"></P>
+  <P id="demo27"></P>
+  <P id="demo28"></P>
+  <P id="demo29"></P>
+  <p id="demo30"></p>
+  <p id="demo31"></p>
+  <p id="demo32"></p>
+  <p id="demo33"></p>
+</body>
+<script>
+  document.getElementById("demo").innerHTML = "myfirst java";
+
+  function myfunction() {
+    document.getElementById("demo1").innerHTML = "kamu";
+  }
+
+  function myfunction2() {
+    document.getElementById("demo2").innerHTML = "diva";
+  }
+
+  function myfunction3() { //Membuat button menampilkan gambar 1 dengan lainnya
+    document.getElementById("myfoto").src = "image/logo-facebookpng-32204.png";
+  }
+
+  function myfunction4() {
+    document.getElementById("myfoto").src = "image/instagram-ge8981922d_1920.jpg";
+  }
+
+  document.getElementById("demo3").innerHTML = 5 + 5;
+  //untuk menampilkan hasil di html
+
+  function myFunction5() { //untuk menampilkan hasil setelah diklik
+    document.write(10 * 5)
+  }
+
+  function myFunction6() { //tombol untuk print current page
+    window.print()
+  }
+  // document.write(5 * 5); //untuk menampilkan langsung hasilnya
+  // window.alert(7 * 8); //untuk memberikan notifikasi
+  console.log(7 * 9); //untuk menampilkan di consol log inspect
+
+  // JS STATEMENT**
+  let x, y, z; //statement var
+  x = 10;
+  y = 11;
+  z = x * y;
+  document.getElementById("demo4").innerHTML = "hasil value z adalah " + z;
+
+  let a, b, c, d; //statement var2
+  a = 15;
+  b = 12;
+  c = 23;
+  d = c + a;
+  document.getElementById("demo5").innerHTML =
+    "hasil value dari 23 + 15 adalah " + d;
+
+  let e, f, g; //untuk statement seperti ini juga boleh
+  e = 13;
+  f = 13;
+  g = 14;
+  h = e + f;
+  document.getElementById("demo6").innerHTML = "hasil dari 13 + 13 adalah " + h;
+
+  function myfunction7() {
+    document.getElementById("demo7").innerHTML = "haiii nama ku"
+    document.getElementById("demo8").innerHTML = "diva"
+  }
+  // JS SYNTAX **
+  document.getElementById("demo9").innerHTML = 10.50
+  // Numbers are written with or without decimals:
+
+  document.getElementById("demo10").innerHTML =
+    "Diva juni artha " + 'Diva Juni Artha' //written within double or single quotes:
+
+  let p;
+  p = 10
+  document.getElementById("demo11").innerHTML = p //
+
+  document.getElementById("demo12").innerHTML = (10 + 5) * 10 - 5 / 5;
+  //arithmetic operators ( + - * / )
+
+  let l, k;
+  l = 10
+  k = 10
+  document.getElementById("demo13").innerHTML = l + k;
+
+  document.getElementById("demo14").innerHTML = //about comment
+    "selain // komen juga bisa menggunakan /* dengan ditutup */" +
+    "ini untuk multiple coment"
+
+  const price1 = 10000; //general rule: always declare variables with const
+  const price2 = 20000;
+  let total = price1 + price2;
+  document.getElementById("demo15").innerHTML =
+    "hasil dari price1 + price 2 adalah " + total;
+
+  const pi = 29.9; //contoh text variabel execute
+  let person = "Diva";
+  let answer = "yes i am";
+  document.getElementById("demo16").innerHTML =
+    pi + "<br>" + person + "<br>" + answer;
+
+  let $ = 9 //mencoba menggunakan string
+  let $mymoney = 9
+  document.getElementById("demo17").innerHTML = $ + $mymoney;
+
+  var L = 90; //now is 90
+  var L = 900; //now is 900
+  //if we use let, it's different with var, let is opposite of var,
+  //let & const are same
+  document.getElementById("demo18").innerHTML = L
+
+  const nama = ["nimo", "dewi", "diva"]; //create
+  nama[0] = "oni"; //change the first, start from "0" for the first statement 
+  nama.push("gambrong"); //add and it appears at last
+  document.getElementById("demo19").innerHTML = nama; //how to display it
+
+  const dept = {
+    depan: "FO",
+    bersih: "security",
+    masak: "FB"
+  }; //create
+  dept.bersih = "HK" //change
+  dept.keamanan = "security" //add
+  document.getElementById("demo20").innerHTML = //how to display it
+    "departemen keamanan adalah " + dept.keamanan;
+
+  var q = 90; //penjumlah bentuk seperti ini juga bisa
+  q += 5
+  document.getElementById("demo21").innerHTML = q
+
+  let text1 = "Diva"; // Cara penggunaan text dalam js
+  let text2 = "Juni";
+  let text3 = "Artha";
+  let text = text1 + " " + text2 + " " + text3;
+  document.getElementById("demo22").innerHTML = text
+
+  let M = 10 + 10; //How To Display String And Number
+  let W = "8" + 9;
+  let H = "yurei" + 017;
+  document.getElementById("demo23").innerHTML = M + "<br>" + W + "<br>" + H;
+
+  let A, B, C; //cara menggunakan aritmatika ++ & --
+  A = 3;
+  B = 4;
+  A++;
+  B--;
+  document.getElementById("demo24").innerHTML = A;
+  document.getElementById("demo25").innerHTML = B + A;
+
+  let D = 6; //cara menggunakan aritmatika ** & Math.pow
+  let E = 7;
+  let F = 5;
+  document.getElementById("demo26").innerHTML = D ** 3;
+  document.getElementById("demo27").innerHTML = Math.pow(D, 2);
+  document.getElementById("demo28").innerHTML = D + E ** 2;
+  document.getElementById("demo29").innerHTML = (D + F) * E;
+
+  let G = 9e5; //How to use symbol e as a replacement of 0
+  let i = 9e-5;
+  document.getElementById("demo30").innerHTML = G + "<br>" + i;
+
+  let j, I, K; //How to use boolean true or false using "=="
+  j = 9;
+  I = 9;
+  K = 0;
+  document.getElementById("demo31").innerHTML = (j == I) + "<br>" + (j == K);
+
+  const animal = { //How to using const and how to display it
+    name: "Oni",
+    color: "Brown",
+    age: "2 years old"
+  }
+  document.getElementById("demo32").innerHTML =
+    "his name is " + animal.name + " his age is " + animal.age;
+
+  document.getElementById("demo33").innerHTML =
+    typeof "haii" + "<br>" + //How to using typeof element (continue bottom)
+    typeof "aku" + "<br>" + //to indicate that either
+    typeof "kuli" + "<br>" + //the type of variable string or not
+    typeof 90;
+</script>
+
+</html>

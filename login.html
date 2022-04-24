@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Your Account</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+<h1>Login</h1>
+<!-- <form> -->
+    <label>Username</label><br>
+    <input type="text" id="username" required>
+    <br>
+    <label>Password</label><br>
+    <input type="password" id="password" required><br>
+    <select id="bilangan">
+        <option value="tambah">Tambah</option>
+        <option value="perkalian">Perkalian</option>
+        <option value="kurang">Kurang</option>
+        <option value="bagi">Bagi</option>
+    </select>
+    <br />
+    <input type="checkbox" onclick="disabledFunction()" id="disable">
+    <span id="textDisabled" style="color: white;">Disabled OFF</span>
+    <br />
+    <button id="login" onclick="myFunction()">Log In</button>
+    <br>
+    <input type="checkbox" onclick="disabledFunction2()" id="disablelogin">
+    <span id="textdisabled2" style="color:white;">Disabled Off</span> <br> <br>
+    <p style="color: white;">
+        Kapan Indonesia Merdeka ?
+    </p>
+    <input type="text" id="jawaban2">
+    <button type="button" onclick="jawaban()">go</button>
+<!-- </form> -->
+    </div>
+</body>
+<script src="login.js"></script>
+</html>

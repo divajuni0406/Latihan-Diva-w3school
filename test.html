@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .message {
+    position: relative;
+    top: 200px;
+    left: 200px;
+    animation-name: love_you;
+    animation-duration: 10s;
+    animation-iteration-count: 1;
+}
+.message.show::before {
+    content: "I Love You";
+    color: blue;
+}
+.message.show::after {
+    color: red;
+    content: "\2665";
+}
+@keyframes love_you {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 60px;
+    }
+}
+</style>
+<body>
+    <h1 class="message show"></h1>
+</body>
+</html>

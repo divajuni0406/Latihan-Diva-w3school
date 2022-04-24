@@ -217,6 +217,7 @@
     // Note: JavaScript counts months from 0 to 11:
     // January = 0.
     // December = 11.
+    // If we put the value of date over than 11 it will be overflow to the next year, and so on.
     const d3 = new date(2022, 3, 24, 15, 16, 20, 0);
     document.getElementById('demo21').innerHTML = d3;
 </script>

@@ -229,8 +229,13 @@
     const d4 = new Date(2022, 4, 25, 00, 16);
     document.getElementById('demo22').innerHTML = d4;
 
+    // If we make the year with 2 digits it will be (98 = 1998) and so on 
     const d5 = new Date(92, 4, 20);
     document.getElementById('demo23').innerHTML = d5;
+
+    // we can make date by string too 
+    const d6 = new Date('April 25, 2022 12:21:00');
+    document.getElementById('demo24').innerHTML = d6;
 </script>
 
 </html>

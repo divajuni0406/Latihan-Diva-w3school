@@ -105,9 +105,58 @@
     // setMonth() Set the month(0 - 11)
     // setSeconds() Set the seconds(0 - 59)
     // setTime() Set the time(milliseconds since January 1, 1970)
-    
+
     // JS MATH**************************************************************************************************
-    
+    // Math.PI returns the ratio of a circle's circumference to its diameter
+    document.getElementById('demo13').innerHTML = Math.PI;
+
+    // The syntax for any Math property is : Math.property.
+    // JavaScript provides 8 mathematical constants that can be accessed as Math properties:
+    document.getElementById("demo14").innerHTML =
+        "<p><b>Math.E:</b> " + Math.E + "</p>" +
+        "<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+        "<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+        "<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+        "<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+        "<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+        "<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+        "<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+
+    // (Math.Round()) is used to returns the value of () rounded to its nearest number like more than 5 or less than 5:
+    document.getElementById('demo15').innerHTML = Math.round(4.7);
+    // (Math.ceil()) is used to returns the value of () rounded up to its nerest number like more than 0:
+    document.getElementById('demo16').innerHTML = Math.ceil(4.1);
+    // (Math.floor()) is used to returns the value of () rounded down to its nearest number like less than 9:
+    document.getElementById('demo17').innerHTML = Math.floor(4.9);
+    // (Math.trunc()) is used to returns the value of () to the first number of the value:
+    document.getElementById('demo18').innerHTML = Math.trunc(4.8);
+    // (Math.sign()) is used to returns the value of () negatif or positif value with the result (-1 for negatif and 1 for positif):
+    document.getElementById('demo19').innerHTML = Math.sign(-200, 200);
+    // (Math.pow()) is used to returns the value of () to the power of second number, power means pangkat in indonesia:
+    document.getElementById('demo20').innerHTML = Math.pow(2, 3);
+    // (Math.sqrt()) is used to returns the value of () to the square root of (value), square root means akar pangkat duanya in indonesia:
+    document.getElementById('demo21').innerHTML = Math.sqrt(64);
+    // (Math.sqrt()) is used to returns the value of () to the positif value:
+    document.getElementById('demo22').innerHTML = Math.abs(-10.9);
+    // Math.sin(x) returns the sin of x(given in radians): Angle in radians = (angle in degrees) * PI / 180. DON'T UNDERSTAND
+    document.getElementById("demo23").innerHTML = "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+    // returns the cosine(a value between - 1 and 1) of the angle x(given in radians).
+    // If you want to use degrees instead of radians, you have to convert degrees to radians:
+    // Angle in radians = Angle in degrees x PI / 180.
+    document.getElementById("dem24").innerHTML = "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
+    // (Math.min() and Math.max()) can be used to find the lowest or highest value in a list of arguments:
+    document.getElementById('demo25').innerHTML = Math.min(20, 10, 90, -100, 800) + ' ' + Math.max(20, 10, 90, -100,
+        800);
+    // Math.random() returns a random number between 0 and 1: DON'T UNDERSTAND
+    document.getElementById('demo26').innerHTML = Math.random();
+    // Math.log() returns the natural logarithm of a number: DON'T UNDERSTAND
+    document.getElementById('demo27').innerHTML = Math.log();
+    // How many times must we multiply 2 to get 16? that the function of (Math,log2())
+    document.getElementById('demo28'), innerHTML = Math.log2(16);
+    // How many times must we multiply 10 to get 1000? that the function of (Math,log10())
+    document.getElementById('demo29').innerHTML = Math.log10();
+
+    // JS RANDOM***********************************************************************************************
 </script>
 
 </html>

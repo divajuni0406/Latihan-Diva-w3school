@@ -205,7 +205,7 @@
     document.getElementById('demo19').innerHTML = people[0];
 
     // JS DATES************************************************************************************************
-    // (date()) is used to show the current date and time
+    // (date()) is used to show the current date and time, TO AVOID AN ERROR DON'T FORGET TO USE CAPSLOCK ON 'D' OF DATE
     const d2 = new Date();
     document.getElementById('demo20').innerHTML = d2;
 
@@ -218,7 +218,7 @@
     // January = 0.
     // December = 11.
     // If we put the value of date over than 11 it will be overflow to the next year, and so on.
-    const d3 = new date(2022, 3, 24, 15, 16, 20, 0);
+    const d3 = new Date(2022, 3, 24, 15, 16, 20, 0);
     document.getElementById('demo21').innerHTML = d3;
 
     // 6 numbers specify year, month, day, hour, minute, second:
@@ -226,8 +226,11 @@
     // 4 numbers specify year, month, day, and hour:
     // 3 numbers specify year, month, and day:
     // 2 numbers specify year and month:
-    const d4 = new date(2022, 4, 25, 00, 16);
-    document.getElementById('demo21').innerHTML = d4;
+    const d4 = new Date(2022, 4, 25, 00, 16);
+    document.getElementById('demo22').innerHTML = d4;
+
+    const d5 = new Date(92, 4, 20);
+    document.getElementById('demo23').innerHTML = d5;
 </script>
 
 </html>

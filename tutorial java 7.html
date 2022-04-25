@@ -59,6 +59,45 @@
     let d = new Date(dparse);
     document.getElementById('demo').innerHTML = d;
     document.getElementById('demo1').innerHTML = dparse;
+
+    // JS GET DATE METHODS**************************************************************************************
+    // (.getTime()) to convert date into milliseconds 
+    // getFullYear() Get the year as a four digit number(yyyy)
+    // getMonth() Get the month as a number(0 - 11)
+    // getDate() Get the day as a number(1 - 31)
+    // getHours() Get the hour(0 - 23)
+    // getMinutes() Get the minute(0 - 59)
+    // getSeconds() Get the second(0 - 59)
+    // getMilliseconds() Get the millisecond(0 - 999)
+    // getTime() Get the time(milliseconds since January 1, 1970)
+    // getDay() Get the weekday as a number(0 - 6)
+    // Date.now() Get the time.ECMAScript 5.
+    const date1 = new Date();
+    document.getElementById('demo2').innerHTML = date1;
+    document.getElementById('demo3').innerHTML = date1.getTime();
+    document.getElementById('demo4').innerHTML = date1.getFullYear();
+    // + 1 on month because month count start from 0 to 11 
+    document.getElementById('demo5').innerHTML = date1.getMonth() + 1;
+    // or we can make like this to show the month 
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+        'October', 'November', 'December'
+    ];
+    let date2 = new Date();
+    let month = months[date2.getMonth()];
+    document.getElementById('demo6').innerHTML = month;
+    document.getElementById('demo7').innerHTML = date1.getDate();
+    document.getElementById('demo8').innerHTML = date1.getMinutes();
+    document.getElementById('demo9').innerHTML = date1.getSeconds();
+    document.getElementById('demo10').innerHTML = date1.getMilliseconds();
+    document.getElementById('demo11').innerHTML = date1.getDay();
+    // OR WE CAN MAKE SYNTAX LIKE THIS TO GET THE DAY  
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let dayy = new Date();
+    let day = days[dayy.getDay()];
+    document.getElementById('demo12').innerHTML = day;
+    
+    // JS DATE SET METHODS**************************************************************************************
+    
 </script>
 
 </html>

@@ -19,7 +19,13 @@
     <p id="demo7"></p>
     <p id="demo8"></p>
     <p id="demo9"></p>
+    <p>Input Your Age !</p>
+    <input type="text" id="age" value="">
+    <button type="button" onclick="myfunction()">Try It</button>
     <p id="demo10"></p>
+    <p>Please Input Your Age First !</p>
+    <input type="text" id="age1" value="18" maxlength="2">
+    <button type="button" onclick="myfunction1()">Submit !</button>
     <p id="demo11"></p>
     <p id="demo12"></p>
     <p id="demo13"></p>
@@ -89,7 +95,46 @@
     document.getElementById('demo4').innerHTML = (num == num1) + ' ' + (num === num1);
 
     // JS COMPARISONS******************************************************************************************
-    
+    // (!=) means not equal
+    // (!==) means not equal either value or string
+    let x6 = 8;
+    document.getElementById('demo5').innerHTML = (x6 != 9);
+    document.getElementById('demo6').innerHTML = (x6 != 8);
+
+    // (&&) is same like 'and', if two both of them are correct the value is tru otherwise false  
+    let y = 8;
+    let y1 = 9;
+    document.getElementById('demo7').innerHTML = (y < 10 && y1 > 5);
+    // The OR operator (||) returns true if one or both expressions are true, otherwise it returns false
+    document.getElementById('demo8').innerHTML = (y == 8 || y1 == 11);
+    // The NOT operator (!) returns true for false statements and false for true statements.
+    document.getElementById('demo9').innerHTML = !(y < 10) + ' ' + !(y1 < y);
+
+    // If the variable age is a value below 18, the value of the variable voteable will.. 
+    // be "Too young", otherwise the value of voteable will be "Old enough", use (:) to make comparing result.
+    function myfunction() {
+        let age = document.getElementById('age').value;
+        let vote = (age < 18) ? 'Too Young, Can\'t\ Vote' : 'Yes, You Can Vote';
+        document.getElementById('demo10').innerHTML = vote + ' The Form';
+    }
+
+    // When comparing two strings, "2" will be greater than "12", because (alphabetically)
+
+    // This is how to using if else, use (isNaN()) if the input is not a number,
+    // to make user can input 2 digits only just input (maxlength='') into input html above, 
+    function myfunction1() {
+        let vote1;
+        let age1 = document.getElementById('age1').value
+        if (isNaN(age1)) {
+            vote1 = 'Sorry, Please input the number to continue vote !';
+        } else {
+            vote1 = (age1 < 18) ? 'Sorry you can\'t\ vote' :
+                'Valid, You Can Vote, Wait a Moment For The Process Please !';
+        }
+        document.getElementById('demo11').innerHTML = vote1;
+    }
+
+    // JS IF ELSE*********************************************************************
 </script>
 
 </html>

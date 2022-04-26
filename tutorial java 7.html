@@ -51,6 +51,7 @@
     <p id="demo39"></p>
     <p id="demo40"></p>
     <p id="demo41"></p>
+    <button type="button" onclick="myFunction0()">klik here</button>
 </body>
 <script>
     // JS DATE FORMATS****************************************************************************************** 
@@ -139,11 +140,11 @@
     // (Math.sqrt()) is used to returns the value of () to the positif value:
     document.getElementById('demo22').innerHTML = Math.abs(-10.9);
     // Math.sin(x) returns the sin of x(given in radians): Angle in radians = (angle in degrees) * PI / 180. DON'T UNDERSTAND
-    document.getElementById("demo23").innerHTML = "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+    document.getElementById('demo23').innerHTML = "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
     // returns the cosine(a value between - 1 and 1) of the angle x(given in radians).
     // If you want to use degrees instead of radians, you have to convert degrees to radians:
     // Angle in radians = Angle in degrees x PI / 180.
-    document.getElementById("dem24").innerHTML = "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
+    document.getElementById('demo24').innerHTML = "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
     // (Math.min() and Math.max()) can be used to find the lowest or highest value in a list of arguments:
     document.getElementById('demo25').innerHTML = Math.min(20, 10, 90, -100, 800) + ' ' + Math.max(20, 10, 90, -100,
         800);
@@ -157,6 +158,22 @@
     document.getElementById('demo29').innerHTML = Math.log10();
 
     // JS RANDOM***********************************************************************************************
+    // Math.random() always returns a number lower than 1.
+    document.getElementById('demo30').innerHTML = Math.random();
+    // When we use (Math.random()) it will be return to the random number lower than 0, and has many number,
+    // so, when we use (Math.random() * 10) the value will be more than 0, and has many decimals,
+    // and when we use (Math.floor(Math.random() * 10)) can use * 10, 100, and so on = when random has many decimals, math floor will be only take the first number on it's decimals
+    document.getElementById('demo31').innerHTML = Math.floor(Math.random() * 10);
+    // This is learning by my own self 
+    function myFunction0() {
+        const cars = ['avanza', 'zidan', 'honda', 'toyota'];
+        let math = Math.floor(Math.random() * 4);
+        let call = cars[math];
+        let txt2 = '';
+        document.getElementById('demo32').innerHTML = txt2 += call;
+    }
+    
+
 </script>
 
 </html>

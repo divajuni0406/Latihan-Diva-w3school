@@ -28,7 +28,7 @@
     <button type="button" onclick="myfunction1()">Submit !</button>
     <p id="demo11"></p>
     <p>Can you guess what year now is ?</p>
-    <input type="text" id="year" value="">
+    <input type="text" id="year" value="" maxlength="4">
     <button type="button" onclick="myfunction2()">Click Here !</button>
     <p id="demo12"></p>
     <p id="demo13"></p>
@@ -136,7 +136,6 @@
         }
         document.getElementById('demo11').innerHTML = vote1;
     }
-
     // JS IF ELSE*********************************************************************
     // Learn by my own self 
     function myfunction2() {
@@ -153,6 +152,57 @@
         document.getElementById('demo12').innerHTML = text;
     }
     // JS SWITCH**********************************************************************
+    // This is the syntax flow of switch case, (break) is used to when the other
+    // variable is executed the other variable will be close 
+    // The default keyword specifies the code to run if there is no case match:
+    let day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = 'Sunday';
+            break;
+        case 1:
+            day = 'Monday';
+            break;
+        case 2:
+            day = 'Tuesday';
+            break;
+        case 3:
+            day = 'Wednesday';
+            break;
+        case 4:
+            day = 'Thursday';
+            break;
+        case 5:
+            day = 'Friday';
+            break;
+        case 6:
+            day = 'Saturday';
+            break;
+        default:
+            text = 'Love You'
+    }
+    document.getElementById('demo13').innerHTML = 'Today is ' + day;
+
+    // if we make some empty cases like the syntax below it means sharing code,
+    // it's 0,1,2,3 are same result
+    let text1;
+    switch (new Date().getDay()) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            text1 = 'It\'s Weekend';
+            break;
+        case 4:
+        case 5:
+        case 6:
+            text1 = 'It\'s time to work';
+            break;
+    }
+    document.getElementById('demo14').innerHTML = text1;
+
+    // JS FOR******************************************************************************
+    
 </script>
 
 </html>

@@ -27,6 +27,9 @@
     <input type="text" id="age1" value="18" maxlength="2">
     <button type="button" onclick="myfunction1()">Submit !</button>
     <p id="demo11"></p>
+    <p>Can you guess what year now is ?</p>
+    <input type="text" id="year" value="">
+    <button type="button" onclick="myfunction2()">Click Here !</button>
     <p id="demo12"></p>
     <p id="demo13"></p>
     <p id="demo14"></p>
@@ -129,12 +132,27 @@
             vote1 = 'Sorry, Please input the number to continue vote !';
         } else {
             vote1 = (age1 < 18) ? 'Sorry you can\'t\ vote' :
-                'Valid, You Can Vote, Wait a Moment For The Process Please !';
+                'Valid, You Can Vote, Wait a Moment For The Loading Process !';
         }
         document.getElementById('demo11').innerHTML = vote1;
     }
 
     // JS IF ELSE*********************************************************************
+    // Learn by my own self 
+    function myfunction2() {
+        let years = document.getElementById('year').value;
+        let text;
+        // console.log(new Date().getFullYear())
+        if (new Date().getFullYear() == years) {
+            text = 'Hello Now is 2022, You\'re\ correct :D';
+        } else if (new Date().getFullYear() > years) {
+            text = 'Sorry, Incorrect, Try Again !';
+        } else {
+            text = 'Behh sekarang kelewatan !'
+        }
+        document.getElementById('demo12').innerHTML = text;
+    }
+    // JS SWITCH**********************************************************************
 </script>
 
 </html>

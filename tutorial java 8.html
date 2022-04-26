@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p id="demo"></p>
     <p id="demo1"></p>
@@ -60,5 +62,34 @@
     // ON / OFF
     // TRUE / FALSE
     // For this, JavaScript has a Boolean data type.It can only take the values true or false.
+    document.getElementById('demo').innerHTML = Boolean(9 < 10) + ' ' + Boolean(11 < 10);
+    // The easier way
+    document.getElementById('demo1').innerHTML = 9 < 10;
+
+    // ==	equal to	if (day == "Monday")
+    // >	greater than	if (salary > 9000)
+    // <	less than	if (age < 18)
+
+    // value 0, -0, empty, NaN, False, Undefined, Null always be false, more than 0 is true 
+    let x = 0;
+    let x1 = -0;
+    let x2 = '';
+    document.getElementById('demo2').innerHTML = Boolean(x) + '<br>' + Boolean(x1) + '<br>' + Boolean(x2);
+
+    // If we use (new) in boolean it will be an object if we execute by typeof, but the result keep true / false
+    let x4 = 4;
+    let x5 = new Boolean(x4);
+    document.getElementById('demo3').innerHTML = typeof x4 + ' ' + typeof x5 + ' ' + x5;
+
+    // == equal to only value. example (1=='1') the value will be true because one and one same value but,
+    // === equal value and equal type, if we use (1==='1') the value will be false because....
+    // this is not just for the number but it will be look at the type of that value
+    let num = 1;
+    let num1 = '1';
+    document.getElementById('demo4').innerHTML = (num == num1) + ' ' + (num === num1);
+
+    // JS COMPARISONS******************************************************************************************
+    
 </script>
+
 </html>

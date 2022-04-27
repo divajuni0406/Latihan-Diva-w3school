@@ -209,6 +209,52 @@
         text2 += cars[i] + '<br>';
     }
     document.getElementById('demo15').innerHTML = text2;
+
+    // Case 2
+    let text3 = '';
+    for (let i = 0; i < 11; i++) {
+        text3 += 'This is number ' + i + '<br>';
+    }
+    document.getElementById('demo16').innerHTML = text3;
+
+    // this is use long way to execute the syntax of loop for, you can make len..
+    // , , ,. after that you can fill inside (for(here, with come to seperate it)) 
+    const people = ['Diva', 'Devin', 'Dewi', 'Darma', 'Dio'];
+    let i, pelen, text4;
+    for (i = 0, pelen = people.length, text4 = ''; i < pelen; i++) {
+        text4 += people[i] + '<br>';
+    }
+    document.getElementById('demo17').innerHTML = text4;
+
+    // You can put (ii++ at the end of the flow in loop or, if you make the value of (ii)
+    // outside of loop, you can make the syntax after loop (;...;) use it)
+    let ii = 0;
+    let text5 = '';
+    for (; ii < pelen;) {
+        text5 += people[ii] + '<br>';
+        ii++;
+    }
+    document.getElementById('demo18').innerHTML = text5;
+
+    // Other way 
+    let text6 = '';
+    for (var iii = 0; i < 10; iii++) {
+        // some statements
+        text6 += iii + '<br>';
+    }
+    document.getElementById("demo19").innerHTML = text6;
+
+    // JS LOOP FOR IN*****************************************************************
+    const peoplee = {
+        FirstName: 'Diva',
+        LastName: 'Juni Artha',
+        Age: '23 Tahun'
+    };
+    // let text7 = '';
+    // for (let x in peoplee) {
+    //     text7 += peoplee[x] + ' ';
+    // }
+    // document.getElementById('demo20').innerHTML = text7;
 </script>
 
 </html>

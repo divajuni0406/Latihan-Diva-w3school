@@ -236,9 +236,9 @@
     }
     document.getElementById('demo18').innerHTML = text5;
 
-    // Other way 
+    // Other way i=0 inside for
     let text6 = '';
-    for (var iii = 0; i < 10; iii++) {
+    for (var iii = 0; iii < 10; iii++) {
         // some statements
         text6 += iii + '<br>';
     }
@@ -250,11 +250,91 @@
         LastName: 'Juni Artha',
         Age: '23 Tahun'
     };
-    // let text7 = '';
-    // for (let x in peoplee) {
-    //     text7 += peoplee[x] + ' ';
-    // }
-    // document.getElementById('demo20').innerHTML = text7;
+    const peoplee1 = {
+        FirstName: 'Diva',
+        LastName: 'Juni Artha',
+        Age: '23 Tahun'
+    };
+    let text7 = '';
+    let text8 = '';
+    for (let x in peoplee && peoplee1) {
+        text7 += peoplee[x] + ' ';
+        text8 += peoplee1[x] + ' ';
+    }
+    document.getElementById('demo20').innerHTML = text7 + '<br>' + text8;
+
+    // (.forEach())is used to call back each value, array, or index inside the variable 
+    const num2 = [12, 13, 14, 15, 16];
+    let text9 = '';
+    num2.forEach(myfunction3);
+
+    function myfunction3(value, index, array) {
+        text9 += value + '<br>';
+    }
+    document.getElementById('demo21').innerHTML = text9;
+
+    // JS LOOP FOR OF*****************************************************************
+    const carss = ['Avanza', 'Panther', 'Pajero', 'Nissan'];
+    let text10 = '';
+    for (let x of carss) {
+        text10 += x + '<br>';
+    }
+    document.getElementById('demo22').innerHTML = text10;
+
+    // after let x of, and let x in, and then after text11+= (For in) using (const[x]),
+    // (for of) using (x)
+    let name = 'Diva Juni Artha';
+    let text11 = '';
+    for (let x of name) {
+        text11 += x + '<br>';
+    }
+    document.getElementById('demo23').innerHTML = text11;
+
+    // JS LOOP WHILE******************************************************************
+    // In the following example, the code in the loop will run, over and over again,
+    // as long as a variable (i) is less than 10:
+
+    // If you forget to increase the variable used in the condition,
+    // the loop will never end. This will crash your browser.
+    let text12 = '';
+    let a = 0;
+    while (a < 11) {
+        text12 += 'This is number ' + a + '<br>';
+        a++;
+    }
+    document.getElementById('demo24').innerHTML = text12;
+
+    // This is the flow of do while, (do) you can input what would you like to the result appear later,
+    // and then while after do 
+    let text13 = '';
+    let b = 0;
+    do {
+        text13 += 'The value of b is ' + b + '<br>';
+        b++;
+    }
+    while (b < 10);
+    document.getElementById('demo25').innerHTML = text13;
+
+    // Other way, after for we can make (; dog[I]) like that, and the increastment
+    // variable put after the execution
+    // and either for and while are similiar enough, you can see below 
+    const dog = ['Nimo', 'Gambrong', 'Zilong', 'Oni'];
+    let textt = '';
+    let I = 0;
+    for (; dog[I];) {
+        textt += dog[I] + '<br>';
+        I++;
+    }
+    document.getElementById('demo26').innerHTML = textt;
+
+    // and either for and while are similiar enough, you can see below 
+    let textt2 = '';
+    let O = 0;
+    while (dog[O]) {
+        textt2 += dog[O] + '<br>';
+        O++;
+    }
+    document.getElementById('demo27').innerHTML = textt2;
 </script>
 
 </html>

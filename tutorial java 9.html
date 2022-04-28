@@ -178,6 +178,80 @@
         text8 += x + ' ';
     }
     document.getElementById('demo13').innerHTML = text8;
+
+    // JS MAPS***********************************************************************
+    // We can make map with this flow and use (const.get()) to get the value inside map
+    const game1 = new Map([
+        ['Suikoden5', 5000],
+        ['Suikoden4', 4000],
+        ['Suikoden3', 3000],
+        ['Suikoden2', 2000],
+        ['Suikoden1', 1000]
+    ]);
+    document.getElementById('demo14').innerHTML = game1.get('Suikoden5');
+
+    // You can add elements to a Map with the set() method:
+    const game2 = new Map()
+    game2.set('Suikoden5', 5000);
+    game2.set('Suikoden4', 4000);
+    game2.set('Suikoden3', 3000);
+    game2.set('Suikoden2', 2000);
+    game2.set('Suikoden1', 1000);
+    document.getElementById('demo15').innerHTML = game2.get('Suikoden2');
+
+    // The set() method can also be used to change existing Map values:
+    const game3 = new Map()
+    game2.set('Suikoden2', 2);
+    document.getElementById('demo16').innerHTML = game2.get('Suikoden2');
+
+    // The size property returns the number of elements in a Map:
+    document.getElementById('demo17').innerHTML = game2.size;
+
+    // The delete() method removes a Map element:
+    // and i use (ForEach) to call the element, to check the element has been deleted
+    const game4 = new Map([
+        ['Mobile Legends', 7000],
+        ['Valorant', 9000],
+        ['Clash of Clans', 8000]
+    ]);
+    game4.delete('Valorant')
+    let text9 = '';
+    game4.forEach(myfunction2);
+
+    function myfunction2(value) {
+        text9 += value + '<br>';
+    }
+    document.getElementById('demo18').innerHTML = text9;
+    // try using size to see that the element has deleted already or not
+    document.getElementById('demo19').innerHTML = game4.size;
+    // The has() method returns true if a key exists in a Map:
+    document.getElementById('demo20').innerHTML = game4.has('Clash of Clans');
+    // entries() Returns an iterator with the [key, value] pairs in a Map
+    document.getElementById('demo21').innerHTML = game4.entries();
+
+    // This is how to make the result showing chou and it's price(example),
+    // here i use (const.foreach()) and inside () we put key and value, value is chou, and key it's price 
+    const Hero = new Map([
+        ['Chou', 9000],
+        ['Hilda', 10000],
+        ['Helcurt', 1000],
+        ['Turtle', 7000]
+    ]);
+    text10 = '';
+    Hero.forEach(myfunction3);
+
+    function myfunction3(key, value) {
+        text10 += value + ' Skinnya seharga ' + key + '<br>';
+    }
+    document.getElementById('demo22').innerHTML = text10;
+
+    // now we can use (loop for of) with (entries()), entries()
+    // Returns an iterator with the [key, value] pairs in a Map
+    let text11 = '';
+    for (let x of Hero.entries()) {
+        text11 += x + '<br>';
+    }
+    document.getElementById('demo23').innerHTML = text11;
 </script>
 
 </html>

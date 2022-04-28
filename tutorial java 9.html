@@ -252,6 +252,57 @@
         text11 += x + '<br>';
     }
     document.getElementById('demo23').innerHTML = text11;
+
+    // JS TYPE OF**********************************************************************
+    // The data type of NaN is number
+    // The data type of an array is object
+    // The data type of a date is object
+    // The data type of null is object
+    // The data type of an undefined variable is undefined *
+    // The data type of a variable that has not been assigned a value is also undefined *
+
+    // The constructor property returns the constructor function for all JavaScript variables.
+    document.getElementById('demo24').innerHTML = "john".constructor + "<br>" +
+        (3.14).constructor + "<br>" +
+        false.constructor + "<br>" + [1, 2, 3, 4].constructor + "<br>" + {
+            name: 'john',
+            age: 34
+        }.constructor + "<br>" +
+        new Date().constructor + "<br>" +
+        function () {}.constructor;
+
+    // Now how to looking for the result is true if const people is array using (isArray()) and using (constructor)
+    const people = ['Dewi', 'Diva', 'Darma', 'Dio'];
+    document.getElementById('demo25').innerHTML = isArray(people);
+    // this is mean(after return), 'apakah aray di people itu sama dengan aray ?', if yes the result true
+    function isArray(myArray12) {
+        return myArray12.constructor === Array;
+    }
+
+    // now i wanna looking for, is variable date it's indexOf ('Date')
+    // position more than -1, if yes is true, otherwise false, using (isDate)
+    let date = new Date();
+    document.getElementById('demo26').innerHTML = isDate(date);
+    // it means after return, 'apakah variable date (ubah dulu ke string/kata menggunakan (toString())).
+    // dan kemudian cari kata 'Date', dengan menggunakan (indexOf()),
+    // kemudian apakah kata date itu berada lebih besar dari -1 (posisinya), jika iya true
+    function isDate(date) {
+        return date.constructor.toString().indexOf('Date') > -1;
+    }
+
+    // In JavaScript null is "nothing".It is supposed to be something that doesn 't exist.
+    // Unfortunately, in JavaScript, the data type of null is an object.
+
+    // In JavaScript null is "nothing".It is supposed to be something that doesn 't exist.
+    // Unfortunately, in JavaScript, the data type of null is an object.
+    // null is doesn't work if we use it in const, it will work in variable (let)
+    let naruto = {
+        name: 'Kaguya',
+        name1: 'Shikamaru',
+        name2: 'Kiba'
+    };
+    naruto = null;
+    document.getElementById('demo27').innerHTML = typeof naruto;
 </script>
 
 </html>

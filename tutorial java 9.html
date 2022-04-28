@@ -128,10 +128,56 @@
     for (let x of letter) {
         text6 += x + ',' + ' ';
     }
-    document.getElementById('demo6').innerHTML = text6
+    document.getElementById('demo6').innerHTML = text6;
 
     // JS SET***************************************************************************
-    
+    // size	Returns the number of elements in a Set
+    const letters = new Set(['a', 'b', 'c', 'd']);
+    document.getElementById('demo7').innerHTML = letters.size;
+
+    // add()	Adds a new element to the Set
+    const letters2 = new Set();
+    letters2.add('a');
+    letters2.add('b');
+    letters2.add('c');
+    document.getElementById('demo8').innerHTML = letters2.size;
+
+    // add()	Adds a new element to the Set
+    const letters3 = new Set(['a', 'b', 'c', 'd']);
+    letters3.add('e');
+    letters3.add('f');
+    letters3.add('g');
+    document.getElementById('demo9').innerHTML = letters3.size;
+
+    // if the value of set is same, it will be count only 1 
+    const letters4 = new Set();
+    letters4.add('a');
+    letters4.add('a');
+    letters4.add('a');
+    letters4.add('b');
+    letters4.add('b');
+    letters4.add('c');
+    document.getElementById('demo10').innerHTML = letters4.size;
+
+    // you can use (foreach) to call the set of value inside 
+    const letters5 = new Set(['a', 'b', 'c', 'd']);
+    let text7 = '';
+    letters5.forEach(myfunction);
+
+    function myfunction(value) {
+        text7 += value + ' ';
+    }
+    document.getElementById('demo11').innerHTML = text7;
+
+    // The values() method returns a new iterator object containing all the values in a Set:
+    document.getElementById('demo12').innerHTML = letters5.values();
+
+    // Now you can use the Iterator object to access the elements:
+    let text8 = '';
+    for (let x of letters5.values()) {
+        text8 += x + ' ';
+    }
+    document.getElementById('demo13').innerHTML = text8;
 </script>
 
 </html>

@@ -53,22 +53,85 @@
     <p id="demo41"></p>
 </body>
 <script>
+    // JS BREAK ***********************************************************************
+    //(Break syntax), break; it means the loop will be stop and not continue again
+    // after the value that you want to start stopping 
+    let text = '';
+    for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+            break;
+        }
+        text += 'This is number ' + i + '<br>';
+    }
+    document.getElementById('demo').innerHTML = text;
+
+    // (Continue) it means it jump over the value that you want to jump and continue after it jump the value
+    let text1 = '';
+    for (let i = 0; i < 10; i++) {
+        if (i === 3) {
+            continue;
+        }
+        text1 += 'This is number ' + i + '<br>';
+    }
+    document.getElementById('demo1').innerHTML = text1;
+
+    // we can use break with make a list like this, and use syntax (break list;) to break the list after that
+    const university = ['STP', 'Unud', 'Brawijaya', 'Poltek'];
+    let text2 = '';
+    list: {
+        text2 += university[0] + '<br>';
+        text2 += university[1] + '<br>';
+        break list;
+        text2 += university[2] + '<br>';
+        text2 += university[3] + '<br>';
+    }
+    document.getElementById('demo2').innerHTML = text2;
+
+    // This is my self learning 
+    let text3 = '';
+    for (let i = 0; i < university.length; i++) {
+        if (i === 2) {
+            break;
+        }
+        text3 += university[i] + '<br>';
+    }
+    document.getElementById('demo3').innerHTML = text3;
+
     // JS ITERABLES *****************************************************************
     // Iterables are iterable objects(like Arrays).
     // Iterables can be accessed with simple and efficient code.
     // Iterables can be iterated over with
     // for..of loops
-    // We can execute, even there is variable inside of variable using for of 
-    const fruits = new Map([
+    // We can execute, even there is a variable inside (map) of variable using for of 
+    const custom = new Map([
         ['T-Shirt', 10000],
         ['Shoes', 20000],
         ['Helmet', 300000]
     ]);
-    let text = '';
-    for (let x of fruits) {
-        text += x + '<br>';
+    let text4 = '';
+    for (let x of custom) {
+        text4 += x + '<br>';
     }
-    document.getElementById('demo').innerHTML = text;
+    document.getElementById('demo4').innerHTML = text4;
+
+    // can use (let x of / loop for of) to call the array elements 
+    const game = ['Suikoden I', 'Suikoden II', 'Suikoden III', 'Suikoden IV', 'Suikoden V'];
+    let text5 = '';
+    for (let x of game) {
+        text5 += x + ',' + ' ';
+    }
+    document.getElementById('demo5').innerHTML = text5;
+
+    // we can use (loop for of) to call the array elements inside (set) 
+    const letter = new Set(['a', 'b', 'c', 'd']);
+    text6 = '';
+    for (let x of letter) {
+        text6 += x + ',' + ' ';
+    }
+    document.getElementById('demo6').innerHTML = text6
+
+    // JS SET***************************************************************************
+    
 </script>
 
 </html>

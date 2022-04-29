@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 30%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="timer"></h2>
+    <div id="content">
+        <h2>Jawabalah Soal Di Bawah Ini</h2>
+
+        <p id="soal"></p>
+        <input type="radio" id="A" name="jawaban" onclick="clickJawaban('A')">
+        <label id="soalA"> I have a bike</label><br>
+        <input type="radio" id="B" name="jawaban" onclick="clickJawaban('B')">
+        <label id="soalB"> I have a bike</label><br>
+        <input type="radio" id="C" name="jawaban" onclick="clickJawaban('C')">
+        <label id="soalC"> I have a bike</label><br>
+        <input type="radio" id="D" name="jawaban" onclick="clickJawaban('D')">
+        <label id="soalD"> I have a bike</label><br><br>
+
+        <button type="button" onclick="myFunction()">Next</button>
+    </div>
+
+    <script>
+        let urutan = 0;
+        let c = 1800;
+        let totalJawabanBenar = 0;
+        let jawabanUser = '';
+        let pertanyaan = [{
+                soal: 'Kapan Hari Kemerdakaan Indonesia ?',
+                kunci: 'B',
+                abjad: [{
+                        huruf: 'A',
+                        jawaban: '18 Agustus 1945'
+                    },
+                    {
+                        huruf: 'B',
+                        jawaban: '17 Agustus 1945'
+                    },
+                    {
+                        huruf: 'C',
+                        jawaban: '11 Agustus 1945'
+                    },
+                    {
+                        huruf: 'D',
+                        jawaban: '19 Agustus 1945'
+                    }
+                ]
+            },
+            {
+                soal: 'Kapan Ulang Tahun Ku ?',
+                kunci: 'C',
+                abjad: [{
+                        huruf: 'A',
+                        jawaban: '2 Juni 1993'
+                    },
+                    {
+                        huruf: 'B',
+                        jawaban: '5 April 1999'
+                    },
+                    {
+                        huruf: 'C',
+                        jawaban: '4 Juni 1999'
+                    },
+                    {
+                        huruf: 'D',
+                        jawaban: '19 Desember 2000'
+                    }
+                ]
+            }
+        ];
+
+        let nomerSoal = pertanyaan.length;
+
+        soal(pertanyaan[urutan]);
+        countdown();
+
+        function soal(pertanyaan) {
+            let string = pertanyaan.soal + '';
+            pertanyaan.abjad.forEach(function (abjad) {
+                document.getElementById('soal' + abjad.huruf).innerHTML = abjad.jawaban;
+
+            })
+            document.getElementById('soal').innerHTML = string;
+        }
+
+        function cekJawaban(kunci) {
+            if (kunci == jawabanUser) {
+                totalJawabanBenar += 10;
+            }
+        }
+
+        function clickJawaban(jawaban) {
+            jawabanUser = jawaban;
+        }
+
+        function hasil() {
+            let total = (totalJawabanBenar / pertanyaan.length) * 10;
+            if (total == 0) {
+                window.alert('Manusia GOUBBBLLOKKKK');
+            } else {
+                window.alert('nilai anda adalah ' + total);
+            }
+            this.reset();
+            this.resetRadio();
+            this.soal(pertanyaan[urutan]);
+        }
+
+        function reset() {
+            c = 1800;
+            urutan = 0;
+            totalJawabanBenar = 0;
+            nomerSoal = pertanyaan.length;
+            this.countdown();
+        }
+
+        function myFunction() {
+            if (jawabanUser == '') {
+                return;
+            }
+
+            if (nomerSoal == 1) {
+                this.cekJawaban(pertanyaan[urutan].kunci);
+                this.hasil();
+                return
+            }
+
+            this.cekJawaban(pertanyaan[urutan].kunci);
+            urutan++;
+            nomerSoal--;
+            this.soal(pertanyaan[urutan])
+            this.resetRadio();
+        }
+
+        function resetRadio() {
+            document.getElementById('A').checked = false;
+            document.getElementById('B').checked = false;
+            document.getElementById('C').checked = false;
+            document.getElementById('D').checked = false;
+        }
+
+        function countdown() {
+            myTimer = setInterval(myClock, 1000);
+
+            function myClock() {
+                --c
+                var seconds = c % 60; // Seconds that cannot be written in minutes
+                var secondsInMinutes = (c - seconds) / 60; // Gives the seconds that COULD be given in minutes
+                var minutes = secondsInMinutes % 60; // Minutes that cannot be written in hours
+                var hours = (secondsInMinutes - minutes) / 60;
+                // Now in hours, minutes and seconds, you have the time you need.
+                document.getElementById('timer').innerHTML = minutes + "m " + seconds + 's'
+                if (c == 0) {
+                    this.hasil();
+                    clearInterval(myTimer);
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

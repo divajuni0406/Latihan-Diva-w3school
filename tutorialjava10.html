@@ -56,9 +56,45 @@
     // JS BITWISE********************************************************************
 
     // JS REQEXP
-    let text12 = 'Visit My Website';
+    // to looking where the location of (the word tha we wanna looking for) use (.search(word))
+    let text = 'Visit My Website';
     let n = text.search('My');
-    document.getElementById('demo32').innerHTML = n;
+    document.getElementById('demo').innerHTML = n;
+    // If you put inside .search(wrong word, like different uppercase or lower)
+    // you can use i(incencitive) to looking the word 
+    document.getElementById('demo1').innerHTML = text.search(/my/i);
+    // To change the word, use (.replace(put the word that want to replace, put the new one))
+    document.getElementById('demo2').innerHTML = text.replace(/website/i, 'Instagram');
+
+    // (.match()) it means to show up the word inside(), and g it means global of the word that i'm looking for 
+    let text1 = 'My name is Diva, he is 29 years old';
+    let result = text1.match(/is/g);
+    document.getElementById('demo2').innerHTML = result;
+    // 'm' it means multiline, if there are multiple text that we looking for, it will appear only for once
+    document.getElementById('demo3').innerHTML = text1.match(/is/m);
+
+    // [can looking the word inside bracket], [1-8] with g it means search and show up the number from 1 to 8
+    let text2 = '1236789';
+    let search = text2.match(/[1-8]/g);
+    document.getElementById('demo4').innerHTML = search;
+
+    // The test() method is a RegExp expression method.
+    // It searches a string
+    // for a pattern, and returns true or false, depending on the result.
+    // The following example searches a string
+    // for the character "Hi": use /Hi/.test(text3)
+    let text3 = 'Hi i\'m Diva';
+    document.getElementById('demo5').innerHTML = /Hi/.test(text3);
+
+    // The exec() method is a RegExp expression method.
+    // It searches a string
+    // for a specified pattern, and returns the found text as an object.
+    // If no match is found, it returns an empty(null) object.
+    // The following example searches a string
+    // for the character "D":
+    const obj = /D/.exec('My name is Diva');
+    document.getElementById('demo6').innerHTML = 'Please looking for alphabet ' + obj[0] + ' in position ' + obj.index +
+        ' inside ' + obj.input;
 </script>
 
 </html>

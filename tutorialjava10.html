@@ -140,6 +140,50 @@
     };
 
     // JS THIS KEYWORD*****************************************************************
+    // (This.) is used to recall the variable, and to recall the variable inside
+    // function dpon't forget to use (). ex(person.fullname())
+    const person = {
+        firstname: 'Dewi',
+        lastname: 'Kharisma',
+        id: 55678,
+        fullname: function () {
+            return this.firstname + ' ' + this.lastname;
+        }
+    };
+    document.getElementById('demo12').innerHTML = person.fullname();
+
+    // When used alone, this refers to the global object.
+    // Because this is running in the global scope.
+    // In a browser window the global object is[object Window]: that is the result
+    let x1 = this;
+    document.getElementById('demo13').innerHTML = x1;
+
+    const person2 = {
+        fullname: function () {
+            return this.firstname + ' ' + this.lastname;
+        }
+    };
+    // even we make a different const, we keep to be able to call them each other with (const.fullname.call(const))
+    const person3 = {
+        firstname: 'Diva',
+        lastname: 'Juni Artha'
+    };
+    let x2 = person2.fullname.call(person3);
+    document.getElementById('demo14').innerHTML = x2;
+
+    // we also can call or borrow the variable of other const with using
+    // (let ... = const.fullname.bind(targetconst)) and call again (document.getElementById('').innerHTML = name of let with())
+    const person4 = {
+        firstname: 'Loucian',
+        lastname: 'Cassa',
+        fullname: function () {
+            return this.firstname + ' ' + this.lastname;
+        }
+    };
+    let full = person4.fullname.bind(person3);
+    document.getElementById('demo15').innerHTML = full();
+
+    
 </script>
 
 </html>

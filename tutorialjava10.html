@@ -214,7 +214,18 @@
     document.getElementById('demo20').innerHTML = hello3('Dunia !');
 
     // JS CLASSES********************************************************************
-    
+    // use class and then put constructor (..., ...) {call again the variable use
+    // this. ... = ...}, to call it make a new variable and then use
+    // (new and call the class name('avanza', 2012)), and then call after innerhtml =
+    // put the new variable, example (mycar.name + ' ' + mycar.year)
+    class cars {
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+    }
+    let mycars = new cars('Avanza', 2012);
+    document.getElementById('demo21').innerHTML = mycars.name + ' ' + mycars.year;
 </script>
 
 </html>

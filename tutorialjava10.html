@@ -110,7 +110,7 @@
         document.getElementById('demo7').innerHTML = naruto + ' adalah typenya ' + typeof naruto;
     }
 
-    // if we make a syntax like this without let and call with myFunction or without function too, this will be a global scope
+    // if we make a syntax like this without let(naruto1 = 'Madara') and call with myFunction or without function too, this will be a global scope
     myFunction1();
     document.getElementById('demo8').innerHTML = naruto1;
 
@@ -123,7 +123,23 @@
     var naruto2 = 'Sasuke';
     document.getElementById('demo10').innerHTML = 'i can display  ' + window.naruto2;
 
-    
+    // JS HOISTING*********************************************************************
+    // This is how to show up an error inside try catch, the error will be appear at front end if we connect them to the (p id demo)
+    try {
+        const carName = 'Fortuner';
+        carName = ['Avanza'];
+    } catch (err) {
+        document.getElementById('demo11').innerHTML = err;
+    }
+    "use strict";
+    x = 3.12;
+    "use strict";
+    xi = {
+        p1: 10,
+        p2: 20
+    };
+
+    // JS THIS KEYWORD*****************************************************************
 </script>
 
 </html>

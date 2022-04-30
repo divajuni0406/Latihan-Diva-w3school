@@ -17,6 +17,7 @@
     <p id="demo5"></p>
     <p id="demo6"></p>
     <p id="demo7"></p>
+    <button type="button" onclick="myFunction()">Klik here</button>
     <p id="demo8"></p>
     <p id="demo9"></p>
     <p id="demo10"></p>
@@ -97,6 +98,31 @@
         ' inside ' + obj.input;
 
     // JS ERROR**********************************************************************
+    // JS SCOPE*************************************************************************
+    // Scope determines the accessibility(visibility) of variables.
+    // JavaScript has 3 types of scope:
+    // Block scope
+    // Function scope
+    // Global scope
+    // to call the function inside {}, input document.getEelemntby id inside too, can not put outside the box except var  
+    function myFunction() {
+        let naruto = 'Kiba';
+        document.getElementById('demo7').innerHTML = naruto + ' adalah typenya ' + typeof naruto;
+    }
+
+    // if we make a syntax like this without let and call with myFunction or without function too, this will be a global scope
+    myFunction1();
+    document.getElementById('demo8').innerHTML = naruto1;
+
+    function myFunction1() {
+        naruto1 = 'Madara';
+        document.getElementById('demo9').innerHTML = naruto1;
+    }
+
+    // In HTML, global variables defined with var, will become window variables.
+    var naruto2 = 'Sasuke';
+    document.getElementById('demo10').innerHTML = 'i can display  ' + window.naruto2;
+
     
 </script>
 

@@ -183,6 +183,37 @@
     let full = person4.fullname.bind(person3);
     document.getElementById('demo15').innerHTML = full();
 
+    // JS ARROW FUNCTION************************************************************
+    // the syntax of js arrow, (a, b) => it means beome a * b 
+    let arr = (a, b) => a * b;
+    document.getElementById('demo16').innerHTML = arr(5, 10);
+
+    // can use function () and then return to call back, and put the value 
+    let Hello;
+    Hello = function () {
+        return 'hello world';
+    };
+    document.getElementById('demo17').innerHTML = Hello();
+
+    // how to use syntax arrow =>
+    let hello1;
+    hello1 = () => {
+        return 'hello world';
+    };
+    document.getElementById('demo18').innerHTML = hello1();
+
+    // This example shows an Arrow Function without the brackets or the return keyword.
+    let hello2;
+    hello2 = () => 'hello world';
+    document.getElementById('demo19').innerHTML = hello2();
+
+    // you can make a new variable inside () after hello3, and the use arrow (=>)
+    // and put the value that you want + the variable that you put inside (), to call it after get element = hello3 + ('value')
+    let hello3;
+    hello3 = (val) => 'hello world' + ' ' + val;
+    document.getElementById('demo20').innerHTML = hello3('Dunia !');
+
+    // JS CLASSES********************************************************************
     
 </script>
 

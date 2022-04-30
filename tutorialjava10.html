@@ -213,6 +213,14 @@
     hello3 = (val) => 'hello world' + ' ' + val;
     document.getElementById('demo20').innerHTML = hello3('Dunia !');
 
+    // Learn by my own self 
+    let nama = 'Diva';
+    let umur = 23;
+    let nama2 = (nama, umur) => {
+        return (`nama saya ${nama} saya berumur ${umur} tahun.`)
+    };
+    document.getElementById('demo23').innerHTML = nama2(nama, umur);
+
     // JS CLASSES********************************************************************
     // use class and then put constructor (..., ...) {call again the variable use
     // this. ... = ...}, to call it make a new variable and then use
@@ -239,6 +247,21 @@
 
     // import message from "./message.js";
     // document.getElementById("demo").innerHTML = message();
+
+    // import message from "./message.js";
+    // document.getElementById("demo").innerHTML = message();
+
+    // JS JSON***********************************************************************
+    // To make an arrays in json, the format like at the bottom below after variable
+    // (text4), and then to call it we put (const nameconst = JSON.parse(text4))
+    let text4 = '{"employees":[' +
+        '{"firstName":"John","lastName":"Doe" },' +
+        '{"firstName":"Anna","lastName":"Smith" },' +
+        '{"firstName":"Peter","lastName":"Jones" }]}';
+
+    const obj1 = JSON.parse(text4);
+    document.getElementById("demo22").innerHTML =
+        obj1.employees[1].firstName + " " + obj1.employees[1].lastName;
 </script>
 
 </html>

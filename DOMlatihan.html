@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">Diva Juni Artha</p>
+    <p id="demo1"></p>
+    <p>Diva Juni Artha</p>
+    <p>Dewi Kharisma</p>
+    <p id="demo2"></p>
+    <div id="Main">
+        <p>Haii nama ku Diva</p>
+        <p>Aku berumur 23 tahun</p>
+    </div>
+    <p id="demo3"></p>
+    <p class="try">Tolol</p>
+    <p class="try">Pinter</p>
+    <p id="demo4"></p>
+    <p class="select">Saya suka</p>
+    <p class="select">Makan</p>
+    <p class="select">Nasi.</p>
+    <p id="demo5"></p>
+    <form action="" id="frm">
+        firstName: <input type="text" name="fname" value="Diva"> <br>
+        lastName: <input type="text" name="lname" value="Juni Artha"> <br><br>
+        <input type="submit" name="" id="" value="submit">
+    </form>
+    <p>There 3 values in form, such as :</p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+    <p id="demo15"></p>
+    <p id="demo16"></p>
+    <p id="demo17"></p>
+    <p id="demo18"></p>
+    <p id="demo19"></p>
+    <p id="demo20"></p>
+    <p id="demo21"></p>
+    <p id="demo22"></p>
+    <p id="demo23"></p>
+    <p id="demo24"></p>
+    <p id="demo25"></p>
+    <p id="demo26"></p>
+    <p id="demo27"></p>
+    <p id="demo28"></p>
+    <p id="demo29"></p>
+    <p id="demo30"></p>
+    <p id="demo31"></p>
+    <p id="demo32"></p>
+    <p id="demo33"></p>
+    <p id="demo34"></p>
+    <p id="demo35"></p>
+    <p id="demo36"></p>
+    <p id="demo37"></p>
+    <p id="demo38"></p>
+    <p id="demo39"></p>
+    <p id="demo40"></p>
+    <p id="demo41"></p>
+</body>
+<script>
+    // DOM ELEMENTS********************************************************************
+    // we can use (.innerHTML) when we want to show up the other result inside element like let element = 
+    let element = document.getElementById('demo');
+    let hasil = document.getElementById('demo1').innerHTML = 'Haloo perkenalkan nama saya ' + element.innerHTML;
+
+    // you can call the element by tag with (document.getElementsByTagName('')),
+    // and when there are meny ('p') tag names, you can call it with the serial number like (element1[0/1/2/3 and so on].innerHTML)
+    let element1 = document.getElementsByTagName('p');
+    document.getElementById('demo2').innerHTML = 'Nama saya ' + element1[2].innerHTML + '<br>' +
+        'dan pacar saya bernama ' + element1[3].innerHTML;
+
+    // You can call the whole text inside div which contain a tag 
+    let element2 = document.getElementById('Main');
+    document.getElementById('demo3').innerHTML = 'Perkenalkan semua ' + element2.innerHTML;
+
+    // when the class tag or id there are same more than 1 you can call it together with serial number [0,1,2 so on]
+    let element3 = document.getElementsByClassName('try');
+    document.getElementById('demo4').innerHTML = 'Kamu itu ' + element3[1].innerHTML + ' namun terkadang ' + element3[0]
+        .innerHTML;
+
+    // If you want to find all HTML elements that match a specified CSS selector
+    // (id, class names, types, attributes, values of attributes, etc), use the querySelectorAll() method.
+    let element4 = document.querySelectorAll('p.select');
+    document.getElementById('demo5').innerHTML = element4[0].innerHTML + ' ' + element4[1].innerHTML + ' ' + element4[2]
+        .innerHTML;
+
+        // Finding HTML Elements Using document.forms. .elements(is used to looking kind of element like value etc)
+    let text = '';
+    let forms = document.forms['frm'];
+    let frlength = forms.length;
+    for (let i = 0; i < frlength; i++) {
+        text += forms.elements[i].value + '<br>';
+    }
+    document.getElementById('demo6').innerHTML = text;
+</script>
+
+</html>

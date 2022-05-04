@@ -13,6 +13,33 @@
             width: 30%;
 
         }
+
+        #labelSoal {
+            border-style: groove;
+            width: 300px;
+            height: 400px;
+            float: right;
+            background-color: antiquewhite;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+
+        #labelSoal .span {
+            display: inline-block;
+            color: #444;
+            border: 1px solid #CCC;
+            background: #DDD;
+            box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            vertical-align: middle;
+            max-width: 100px;
+            padding: 5px;
+            margin: 2px;
+            text-align: center;
+        }
+        
+        #lableSoal .bright:hover {
+            -webkit-filter: brightness(100%);
+        }
     </style>
 </head>
 
@@ -31,21 +58,31 @@
         <input type="radio" id="D" name="jawaban" onclick="clickJawaban('D')">
         <label id="soalD"> I have a bike</label><br><br>
         <br>
-        <!-- <p id="">Siapa ini ?</p>
-        <input type="radio" name="jawaban" id="" onclick="clickjawaban('A')">
-        <label for="">Diva</label> <br>
-        <input type="radio" name="jawaban" id="" onclick="clickjawaban('B')">
-        <label for="">Diva</label> <br>
-        <input type="radio" name="jawaban" id="" onclick="clickjawaban('C')">
-        <label for="">Diva</label> <br>
-        <input type="radio" name="jawaban" id="" onclick="clickjawaban('D')">
-        <label for="">Diva</label> -->
-
-        <button type="button" onclick="myFunction()">Next</button>
+        
+        <button type="button" id="button" onclick="myFunction()"></button>
     </div>
-
+    
+    <div id="labelSoal">
+    </div>
+    
     <script>
+        // var random1 = Math.floor(Math.random() * pertanyaan.length);
+        // var choice1 = pertanyaan[random1];
+        // console.log(choice1);
+        function soalTest(urut) {
+            this.soal(pertanyaan[urut]);
+        }
+
+        function getDataSoal() {
+            let string = '';
+            for (let i = 0; i < pertanyaan.length; i++) {
+                string += `<span class="span" onclick="soalTest(${i})">No ${i + 1}</span>`
+            }
+
+            document.getElementById('labelSoal').innerHTML = string;
+        }
         let urutan = 0;
+        let buttonName = 'Next';
         let c = 1800;
         let totalJawabanBenar = 0;
         let jawabanUser = '';
@@ -90,20 +127,49 @@
                         jawaban: '19 Desember 2000'
                     }
                 ]
+            },
+            {
+                soal: 'Dio Sering booking kamar dimana ?',
+                kunci: 'C',
+                abjad: [{
+                        huruf: 'A',
+                        jawaban: 'OYO'
+                    },
+                    {
+                        huruf: 'B',
+                        jawaban: 'Di Semak semak'
+                    },
+                    {
+                        huruf: 'C',
+                        jawaban: 'Rasa sayang Inn'
+                    },
+                    {
+                        huruf: 'D',
+                        jawaban: 'Semuanya Benar'
+                    }
+                ]
             }
         ];
 
-        let nomerSoal = pertanyaan.length;
+        let sisaSoal = pertanyaan.length;
         soal(pertanyaan[urutan]);
+        getDataSoal();
         countdown();
 
-        function soal(pertanyaan) {
-            let string = pertanyaan.soal + '';
-            pertanyaan.abjad.forEach(function (abjad) {
+        function soal(payloadPertanyaan) {
+            if (sisaSoal == 1) {
+                buttonName = 'Cek Nilai'
+            } else {
+                buttonName = 'Next';
+            }
+
+            document.getElementById('button').innerHTML = buttonName;
+            document.getElementById('soal').innerHTML = payloadPertanyaan.soal;
+
+            payloadPertanyaan.abjad.forEach(function (abjad) {
                 document.getElementById('soal' + abjad.huruf).innerHTML = abjad.jawaban;
 
             })
-            document.getElementById('soal').innerHTML = string;
         }
 
         function cekJawaban(kunci) {
@@ -132,29 +198,30 @@
             c = 1800;
             urutan = 0;
             totalJawabanBenar = 0;
-            nomerSoal = pertanyaan.length;
-            this.countdown();
+            sisaSoal = pertanyaan.length;
         }
+
 
         function myFunction() {
             if (jawabanUser == '') {
                 return;
             }
 
-            if (nomerSoal == 1) {
+            if (sisaSoal == 1) {
                 this.cekJawaban(pertanyaan[urutan].kunci);
                 this.hasil();
-                return
+                return;
             }
 
             this.cekJawaban(pertanyaan[urutan].kunci);
             urutan++;
-            nomerSoal--;
+            sisaSoal--;
             this.soal(pertanyaan[urutan])
             this.resetRadio();
         }
 
         function resetRadio() {
+            jawabanUser = '';
             document.getElementById('A').checked = false;
             document.getElementById('B').checked = false;
             document.getElementById('C').checked = false;

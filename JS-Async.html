@@ -43,24 +43,64 @@
 </body>
 <Script>
     // function ini untuk memanggil function lain dibawahnya, walaupun isi function dibawahnya sama,
-    // namun yang akan terlihat hasilnya yaitu funtion yang berada paling atas,
+    // namun yang akan terlihat hasilnya yaitu funtion yang berada paling akhir,
     // cara agar function dibawah dapat dipanggil adalah dapat dilihat paling bawah,
     // dan (function(...)) didalam function itu adalah sama halnya seperti let atau variabel 
     function display(Call) {
         document.getElementById('demo').innerHTML = Call;
     }
 
-    function myfunction() {
+    function myFunction() {
         display('Hello World');
     }
 
-    function myfunction1() {
+    function myFunction1() {
         display('Hello Diva');
     }
 
     // This is to make the function able to be called
-    myfunction1();
-    myfunction();
+    myFunction1();
+    myFunction();
+
+    // Make a function first, then = 
+    function myCalculator(num1, num2) {
+        return num1 + num2;
+    }
+    // Kemudian membuat variabel untuk menampung function diatas,
+    // kemudian buat sebuah function untuk dipanggil nantinya
+    let result = myCalculator(5, 9);
+    ThisIs(result);
+    // (jumlah) adalah cara singkat seperti membuat sebuah variabel untuk dipanggil kedalam document.getElementById().innerHTML = jumlah 
+    function ThisIs(jumlah) {
+        document.getElementById('demo1').innerHTML = jumlah;
+    }
+
+    // atau bisa membuat syntax seperti ini ! 
+    function myCalculator1(num1, num2) {
+        // kita bisa membuat syntax langsung seperti ini
+        let sum = num1 * num2;
+        ThisIs1(sum);
+    }
+    // kemudian isi functionnya disini
+    myCalculator1(5, 5);
+    // dan pangil functionnya disni, sekali lagi (jumlah1) adalah variabel
+    function ThisIs1(jumlah1) {
+        document.getElementById('demo2').innerHTML = jumlah1;
+    }
+
+    // atau bisa menggunakan callback variabel seperti ini 
+    function myCalculator2(num1, num2, CallBack) {
+        let sum2 = num1 + num2;
+        CallBack(sum2);
+    }
+    myCalculator2(5, 10, CallBack);
+
+    function CallBack(jumlah2) {
+        document.getElementById('demo3').innerHTML = jumlah2;
+    }
+
+    // Asynchronous
+    
 </Script>
 
 </html>

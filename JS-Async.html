@@ -41,7 +41,8 @@
     <P id="demo29"></P>
     <P id="demo30"></P>
 </body>
-<Script>
+<script>
+    // JS CallBack******************************************************************************
     // function ini untuk memanggil function lain dibawahnya, walaupun isi function dibawahnya sama,
     // namun yang akan terlihat hasilnya yaitu funtion yang berada paling akhir,
     // cara agar function dibawah dapat dipanggil adalah dapat dilihat paling bawah,
@@ -99,8 +100,53 @@
         document.getElementById('demo3').innerHTML = jumlah2;
     }
 
-    // Asynchronous
-    
-</Script>
+    // Asynchronous*************************************************************************
+    // Ketika menggunakan pewaktu seperti dibawah ini, 3000 = 3 detik, 3000 itu milisecond
+    setTimeout(myFunction2, 3000);
+
+    function myFunction2() {
+        document.getElementById('demo4').innerHTML = 'I LOVE YOU';
+    }
+
+    // atau bisa menggunakan cara seperti ini 
+    setTimeout(function () {
+        myFunction3('I LOVE YOU !!!');
+    }, 3000);
+
+    function myFunction3(value) {
+        document.getElementById('demo5').innerHTML = value;
+    }
+
+    // Using setInterval() to display the time every second (1000 milliseconds).
+    setInterval(myFunction4, 1000);
+
+    function myFunction4() {
+        let d = new Date();
+        document.getElementById('demo6').innerHTML =
+            d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+    }
+
+    // JS PROMISES*****************************************************************************
+    let myPromise = new Promise(function (myResolve, myReject) {
+        let x = 0;
+        if (x == 0) {
+            myResolve('Okay')
+        } else {
+            myReject('Error')
+        }
+    })
+    myPromise.then(
+        function (value) {
+            myDisplayer(value);
+        },
+        function (error) {
+            myDisplayer(error);
+        }
+    );
+
+    function myDisplayer(display) {
+        document.getElementById('demo7').innerHTML = display;
+    }
+</script>
 
 </html>

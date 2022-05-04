@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <P id="demo1"></P>
+    <P id="demo2"></P>
+    <P id="demo3"></P>
+    <P id="demo4"></P>
+    <P id="demo5"></P>
+    <P id="demo6"></P>
+    <P id="demo7"></P>
+    <P id="demo8"></P>
+    <P id="demo9"></P>
+    <P id="demo10"></P>
+    <P id="demo11"></P>
+    <P id="demo12"></P>
+    <P id="demo13"></P>
+    <P id="demo14"></P>
+    <P id="demo15"></P>
+    <P id="demo16"></P>
+    <P id="demo17"></P>
+    <P id="demo18"></P>
+    <P id="demo19"></P>
+    <P id="demo20"></P>
+    <P id="demo21"></P>
+    <P id="demo22"></P>
+    <P id="demo23"></P>
+    <P id="demo24"></P>
+    <P id="demo25"></P>
+    <P id="demo26"></P>
+    <P id="demo27"></P>
+    <P id="demo28"></P>
+    <P id="demo29"></P>
+    <P id="demo30"></P>
+</body>
+<Script>
+    // function ini untuk memanggil function lain dibawahnya, walaupun isi function dibawahnya sama,
+    // namun yang akan terlihat hasilnya yaitu funtion yang berada paling atas,
+    // cara agar function dibawah dapat dipanggil adalah dapat dilihat paling bawah,
+    // dan (function(...)) didalam function itu adalah sama halnya seperti let atau variabel 
+    function display(Call) {
+        document.getElementById('demo').innerHTML = Call;
+    }
+
+    function myfunction() {
+        display('Hello World');
+    }
+
+    function myfunction1() {
+        display('Hello Diva');
+    }
+
+    // This is to make the function able to be called
+    myfunction1();
+    myfunction();
+</Script>
+
+</html>

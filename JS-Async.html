@@ -158,59 +158,106 @@
         document.getElementById('demo8').innerHTML = value;
     });
 
-    // Ini contoh penggunaan callback dengan menunggu sebuah file
-    function myDisplayer1(some) {
-        document.getElementById('demo9').innerHTML = some;
-    }
+    // // Ini contoh penggunaan callback dengan menunggu sebuah file
+    // function myDisplayer1(some) {
+    //     document.getElementById('demo9').innerHTML = some;
+    // }
 
-    function getFile(myCallback) {
-        let req = new XMLHttpRequest();
-        req.open('GET', "mycar.html");
-        req.onload = function () {
-            if (req.status == 200) {
-                myCallback(this.responseText);
-            } else {
-                myCallback("Error: " + req.status);
-            }
-        }
-        req.send();
-    }
+    // function getFile(myCallback) {
+    //     let req = new XMLHttpRequest();
+    //     req.open('GET', "mycar.html");
+    //     req.onload = function () {
+    //         if (req.status == 200) {
+    //             myCallback(this.responseText);
+    //         } else {
+    //             myCallback("Error: " + req.status);
+    //         }
+    //     }
+    //     req.send();
+    // }
 
-    getFile(myDisplayer1);
+    // getFile(myDisplayer1);
 
-    // Ini contoh penggunaan Promises untuk mendapatkan sebuah file
-    let myPromise2 = new Promises(function (myResolve, myReject) {
-        let req = new XMLHttpRequest();
-        req.open('GET', 'mycar.html');
-        req.onload = function () {
-            if (req.status == 200) {
-                myResolve(req.response);
-            } else {
-                myReject('File Not Found');
-            }
-        };
-        req.send();
-    })
+    // // Ini contoh penggunaan Promises untuk mendapatkan sebuah file
+    // let myPromise2 = new Promises(function (myResolve, myReject) {
+    //     let req = new XMLHttpRequest();
+    //     req.open('GET', 'mycar.html');
+    //     req.onload = function () {
+    //         if (req.status == 200) {
+    //             myResolve(req.response);
+    //         } else {
+    //             myReject('File Not Found');
+    //         }
+    //     };
+    //     req.send();
+    // })
 
-    myPromise2.then(
-        function (value) {
-            myDisplayer2(value);
-        },
-        function (error) {
-            myDisplayer2(error);
-        }
-    );
+    // myPromise2.then(
+    //     function (value) {
+    //         myDisplayer2(value);
+    //     },
+    //     function (error) {
+    //         myDisplayer2(error);
+    //     }
+    // );
 
-    function myDisplayer2(some) {
-        document.getElementById('demo10').innerHTML = some;
-    }
+    // function myDisplayer2(some) {
+    //     document.getElementById('demo10').innerHTML = some;
+    // }
 
     // JS ASYNC / AWAIT *******************************************************************
     // penggunaan async sebelum function sama dengan seperti promises 
-    
+
     // async function myFunction() {
     //     return "Hello";
     // }
+
+    // jika promises seperti ini 
+
+    // function myFunction() {
+    //     return Promise.resolve("Hello");
+    // }
+
+    // Contoh penggunaan async, hampir sama seperti promise
+    async function myFunction() {
+        return 'Hello World !';
+    }
+    myFunction().then(
+        function (value) {
+            myDisplayer3(value);
+        },
+        function (error) {
+            myDisplayer3(error);
+        }
+    );
+
+    // The keyword await before a function makes the function wait for a promise:
+    // The await keyword can only be used inside an async function.
+
+    // ini adalah contoh tanpa penolakan atau reject
+    function myDisplayer3(some1) {
+        document.getElementById('demo11').innerHTML = some1;
+    }
+
+    async function myFunction1() {
+        let myPromise3 = new Promise(function (myResolve, myReject) {
+            myResolve('I LOVE YOU !');
+        });
+        document.getElementById('demo12').innerHTML = await myPromise3;
+    }
+    myFunction1();
+
+    // Waiting for a Timeout
+    async function myDisplay() {
+        let myPromise4 = new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve("I love You !!");
+            }, 3000);
+        });
+        document.getElementById('demo13').innerHTML = await myPromise4;
+    }
+
+    myDisplay();
 </script>
 
 </html>

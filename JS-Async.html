@@ -147,6 +147,70 @@
     function myDisplayer(display) {
         document.getElementById('demo7').innerHTML = display;
     }
+
+    // contoh penggunaan callback set timer dengan promises 
+    let myPromise1 = new Promise(function (myResolve, myReject) {
+        setTimeout(function () {
+            myResolve('I LOVE YOU !');
+        }, 3000);
+    })
+    myPromise1.then(function (value) {
+        document.getElementById('demo8').innerHTML = value;
+    });
+
+    // Ini contoh penggunaan callback dengan menunggu sebuah file
+    function myDisplayer1(some) {
+        document.getElementById('demo9').innerHTML = some;
+    }
+
+    function getFile(myCallback) {
+        let req = new XMLHttpRequest();
+        req.open('GET', "mycar.html");
+        req.onload = function () {
+            if (req.status == 200) {
+                myCallback(this.responseText);
+            } else {
+                myCallback("Error: " + req.status);
+            }
+        }
+        req.send();
+    }
+
+    getFile(myDisplayer1);
+
+    // Ini contoh penggunaan Promises untuk mendapatkan sebuah file
+    let myPromise2 = new Promises(function (myResolve, myReject) {
+        let req = new XMLHttpRequest();
+        req.open('GET', 'mycar.html');
+        req.onload = function () {
+            if (req.status == 200) {
+                myResolve(req.response);
+            } else {
+                myReject('File Not Found');
+            }
+        };
+        req.send();
+    })
+
+    myPromise2.then(
+        function (value) {
+            myDisplayer2(value);
+        },
+        function (error) {
+            myDisplayer2(error);
+        }
+    );
+
+    function myDisplayer2(some) {
+        document.getElementById('demo10').innerHTML = some;
+    }
+
+    // JS ASYNC / AWAIT *******************************************************************
+    // penggunaan async sebelum function sama dengan seperti promises 
+    
+    // async function myFunction() {
+    //     return "Hello";
+    // }
 </script>
 
 </html>

@@ -11,7 +11,7 @@
 <body>
     <p id="demo">Diva Juni Artha</p>
     <p id="demo1"></p>
-    <p>Diva Juni Artha</p>fdfdf
+    <p>Diva Juni Artha</p>
     <p>Dewi Kharisma</p>
     <p id="demo2"></p>
     <div id="Main">
@@ -33,7 +33,15 @@
     </form>
     <p>There 3 values in form, such as :</p>
     <p id="demo6"></p>
+    <input type="text" id="num" value="">
+    <button type="button" onclick="myFunction()">Submit</button>
     <p id="demo7"></p>
+    <!-- Required is function to make // If you click submit, without filling out the text
+    hrytffield, your browser will display an error message. -->
+    <form action="">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+    </form>
     <p id="demo8"></p>
     <p id="demo9"></p>
     <p id="demo10"></p>
@@ -76,7 +84,7 @@
     let hasil = document.getElementById('demo1').innerHTML = 'Haloo perkenalkan nama saya ' + element.innerHTML;
 
     // you can call the element by tag with (document.getElementsByTagName('')),
-    // and when there are meny ('p') tag names, you can call it with the serial number like (element1[0/1/2/3 and so on].innerHTML)
+    // and when there are many ('p') tag names, you can call it with the serial number like (element1[0/1/2/3 and so on].innerHTML)
     let element1 = document.getElementsByTagName('p');
     document.getElementById('demo2').innerHTML = 'Nama saya ' + element1[2].innerHTML + '<br>' +
         'dan pacar saya bernama ' + element1[3].innerHTML;
@@ -85,7 +93,7 @@
     let element2 = document.getElementById('Main');
     document.getElementById('demo3').innerHTML = 'Perkenalkan semua ' + element2.innerHTML;
 
-    // when the class tag or id there are same more than 1 you can call it together with serial number [0,1,2 so on]
+    // when the class tag or id there are similiar more than 1 you can call it together with serial number [0,1,2 so on]
     let element3 = document.getElementsByClassName('try');
     document.getElementById('demo4').innerHTML = 'Kamu itu ' + element3[1].innerHTML + ' namun terkadang ' + element3[0]
         .innerHTML;
@@ -96,14 +104,30 @@
     document.getElementById('demo5').innerHTML = element4[0].innerHTML + ' ' + element4[1].innerHTML + ' ' + element4[2]
         .innerHTML;
 
-        // Finding HTML Elements Using document.forms. .elements(is used to looking kind of element like value etc)
+    // Finding HTML Elements Using document.forms. .elements(is used to looking kind of element like value etc)
     let text = '';
     let forms = document.forms['frm'];
     let frlength = forms.length;
     for (let i = 0; i < frlength; i++) {
-        text += forms.elements[i].value + '<br>';
+        text += forms[i].value + '<br>';
     }
     document.getElementById('demo6').innerHTML = text;
+
+    // DOM FORMS*****************************************************************************
+
+    // We can use || to make them at once to execute by if else   
+    function myFunction() {
+        let x = document.getElementById('num').value;
+        let text1 = '';
+        if ((isNaN(x)) || x > 10 || x < 1) {
+            text1 = 'Input is not valid';
+        } else {
+            text1 = 'Input Valid';
+        }
+        document.getElementById('demo7').innerHTML = text1;
+    }
+
+    
 </script>
 
 </html>

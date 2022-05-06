@@ -36,18 +36,25 @@
     <input type="text" id="num" value="">
     <button type="button" onclick="myFunction()">Submit</button>
     <p id="demo7"></p>
+
     <!-- Required is function to make // If you click submit, without filling out the text
     hrytffield, your browser will display an error message. -->
     <form action="">
         <input type="text" name="fname" required>
         <input type="submit" value="Submit">
     </form>
-    <p id="demo8"></p>
-    <p id="demo9"></p>
-    <p id="demo10"></p>
-    <p id="demo11"></p>
-    <p id="demo12"></p>
-    <p id="demo13"></p>
+    <p id="demo8">Hello World !</p>
+
+    <!-- This is JS DOM CSS part  -->
+    <p id="demo9">i'm blue when you click the button !</p>
+    <button type="button" onclick="document.getElementById('demo9').style.color = 'blue'">Click Here!</button>
+
+    <!-- This is a part of JS DOM EVENT -->
+    <p id="demo10" onclick="this.innerHTML= 'Oppppsss!!!'">Jangan DiKlik!!!</p>
+    <p id="demo11" onclick="changetext(this)">Diam Diam !!!</p>
+    <p id="demo12" onmouseover="onover(this)" onmouseout="onout(this)" style="background-color: blue;">AKU SAYANG.....
+    </p>
+    <p id="demo13" onmousedown="ondown(this)" onmouseup="onup(this)" style="background-color: #D94A38">Jangan klik!</p>
     <p id="demo14"></p>
     <p id="demo15"></p>
     <p id="demo16"></p>
@@ -127,7 +134,35 @@
         document.getElementById('demo7').innerHTML = text1;
     }
 
-    
+    // JS DOM CSS************************************************************************************
+    document.getElementById('demo8').style.color = 'blue';
+    // JS DOM EVENT***********************************************************************************
+    // How to change the text, to call (x), onclick = 'changetext(this)' use this 
+    function changetext(x) {
+        x.innerHTML = 'Mematikan';
+    }
+
+    // This is how to change the text when mouse over and out 
+    function onover(x) {
+        x.innerHTML = 'KAMU !!!';
+    }
+
+    function onout(x) {
+        x.innerHTML = 'AKU SAYANG.....';
+    }
+
+    // This is how to change text and color at the same time when mouse clicking it and release, when mouse click it name (mousedown), release (mouseup)
+    function ondown(x) {
+        x.style.backgroundColor = "blue";
+        x.innerHTML = 'Lepasin !!!';
+    }
+
+    function onup(x) {
+        x.style.backgroundColor = "#D94A38";
+        x.innerHTML = 'Jangan klik!';
+    }
+
+    // JS DOM EVENT LISTENER***********************************************************************
 </script>
 
 </html>
